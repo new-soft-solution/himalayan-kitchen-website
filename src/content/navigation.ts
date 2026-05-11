@@ -8,6 +8,7 @@ export const mainNavLinks: NavLink[] = [
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
   { label: "FAQ", href: "/faq" },
+  { label: "Reservation", href: "/reservation" },
 ];
 
 export const footerQuickLinks: NavLink[] = [
@@ -15,6 +16,7 @@ export const footerQuickLinks: NavLink[] = [
   { label: "Our Menu", href: "/menu" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
+  { label: "Reservation", href: "/reservation" },
   { label: "FAQ", href: "/faq" },
 ];
 

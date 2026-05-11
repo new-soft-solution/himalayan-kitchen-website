@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { FiMenu, FiX, FiPhone, FiClock, FiChevronDown } from "react-icons/fi";
 import { mainNavLinks } from "@/content/navigation";
 import { restaurant } from "@/content/restaurant";
-import { EXTERNAL_LINKS } from "@/lib/constants";
+import FindATableCTA from "@/components/layout/FindATableCTA";
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
@@ -90,26 +90,7 @@ export default function Header() {
 
           {/* Book Now Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={EXTERNAL_LINKS.findATable}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn inline-flex items-center justify-center gap-2 bg-primary px-7 rounded-md font-jost font-semibold text-[16px] leading-[50px] text-white hover:bg-primary-dark transition-colors"
-            >
-              <span className="btn__inner">Book a Table</span>
-              <svg
-                width="7"
-                height="11"
-                viewBox="0 0 7 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.23096 5.78125L1.66846 10.4062C1.51221 10.5625 1.26221 10.5625 1.13721 10.4062L0.512207 9.78125C0.355957 9.625 0.355957 9.40625 0.512207 9.25L4.19971 5.5L0.512207 1.78125C0.355957 1.625 0.355957 1.375 0.512207 1.25L1.13721 0.625C1.26221 0.46875 1.51221 0.46875 1.66846 0.625L6.23096 5.25C6.38721 5.40625 6.38721 5.625 6.23096 5.78125Z"
-                  fill="white"
-                />
-              </svg>
-            </a>
+            <FindATableCTA text="Book a Table" />
           </div>
 
           {/* Mobile Menu Button */}
@@ -139,14 +120,7 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href={EXTERNAL_LINKS.findATable}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn mt-2 inline-flex items-center justify-center gap-2 bg-primary px-7 py-3 rounded-md font-jost font-semibold text-[16px] text-white"
-              >
-                Book a Table
-              </a>
+              <FindATableCTA text="Book a Table" className="mt-2" />
             </nav>
           </div>
         )}
