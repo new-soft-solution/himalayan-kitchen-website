@@ -114,7 +114,7 @@ export default function RootLayout({
         <Script
           src="https://findatable.nl/js/find-a-table.js"
           data-access-key="findatable_3a78a1a1c6fe1ff516547669961775c84dd1f062"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
       </body>
     </html>
