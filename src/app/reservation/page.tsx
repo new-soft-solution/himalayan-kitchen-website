@@ -24,8 +24,9 @@ export default function ReservationPage() {
               Reserve Your Table
             </h3>
             <p className="font-manrope text-[15px] md:text-[16px] text-white/60 leading-[28px] max-w-[550px] mx-auto">
-              Select your preferred date, time, and party size below. We look forward
-              to welcoming you to our {restaurant.seatingCapacity}-seat dining room.
+              Select your preferred date, time, and party size below. We look
+              forward to welcoming you to our {restaurant.seatingCapacity}-seat
+              dining room.
             </p>
           </div>
 
@@ -41,8 +42,7 @@ export default function ReservationPage() {
             </p>
             <a
               href={`tel:${restaurant.phone}`}
-              className="font-jakarta font-semibold text-[18px] text-primary hover:text-white transition-colors"
-            >
+              className="font-jakarta font-semibold text-[18px] text-primary hover:text-white transition-colors">
               {restaurant.phone}
             </a>
           </div>

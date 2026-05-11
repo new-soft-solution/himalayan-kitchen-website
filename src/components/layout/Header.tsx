@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { FiMenu, FiX, FiPhone, FiClock, FiChevronDown } from "react-icons/fi";
 import { mainNavLinks } from "@/content/navigation";
 import { restaurant } from "@/content/restaurant";
+import { EXTERNAL_LINKS } from "@/lib/constants";
 import FindATableCTA from "@/components/layout/FindATableCTA";
 
 export default function Header() {

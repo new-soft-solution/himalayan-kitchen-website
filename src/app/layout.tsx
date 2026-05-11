@@ -6,6 +6,7 @@ import {
   Manrope,
   Poppins,
 } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -110,6 +111,11 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Script
+          src="https://findatable.nl/js/find-a-table.js"
+          data-access-key="findatable_3a78a1a1c6fe1ff516547669961775c84dd1f062"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

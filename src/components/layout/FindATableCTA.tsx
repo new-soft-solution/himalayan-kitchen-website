@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { EXTERNAL_LINKS } from "@/lib/constants";
 
 interface FindATableCTAProps {
   text?: string;
@@ -18,8 +18,10 @@ export default function FindATableCTA({
   };
 
   return (
-    <Link
-      href="/reservation"
+    <a
+      href={EXTERNAL_LINKS.findATable}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`btn inline-flex items-center justify-center gap-2 bg-primary rounded-md font-jost font-semibold text-white hover:bg-primary-dark transition-colors ${sizeClasses[size]} ${className}`}
     >
       <span className="btn__inner">{text}</span>
@@ -35,6 +37,6 @@ export default function FindATableCTA({
           fill="white"
         />
       </svg>
-    </Link>
+    </a>
   );
 }
