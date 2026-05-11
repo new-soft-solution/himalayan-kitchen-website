@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import SubPageBanner from "@/components/shared/SubPageBanner";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { chefProfile } from "@/content/chef";
@@ -23,13 +22,16 @@ export default function ChefPage() {
             {/* Chef Image */}
             <div className="relative">
               <div className="rounded-lg overflow-hidden bg-dark-cyan-green aspect-[3/4] flex items-center justify-center">
-                <Image
-                  src={chefProfile.image || "/images/chef/surya-raj-giri.jpg"}
-                  alt={chefProfile.name}
-                  width={600}
-                  height={800}
-                  className="w-full h-full object-cover"
-                />
+                <div className="text-center p-8">
+                  <div className="w-[120px] h-[120px] rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <span className="font-jakarta font-bold text-[48px] text-primary">
+                      {chefProfile.name.split(" ").map(n => n[0]).join("")}
+                    </span>
+                  </div>
+                  <p className="font-jakarta font-semibold text-[20px] text-white mb-1">{chefProfile.name}</p>
+                  <p className="font-jost text-[14px] text-white/40">{chefProfile.title}</p>
+                  <p className="font-manrope text-[13px] text-white/30 mt-4">Photo coming soon</p>
+                </div>
               </div>
               {/* Decorative accent */}
               <div className="absolute -bottom-4 -right-4 w-[120px] h-[120px] rounded-full border-2 border-primary/20 pointer-events-none hidden md:block" />
