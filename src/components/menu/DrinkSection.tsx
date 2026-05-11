@@ -8,7 +8,7 @@ interface DrinkSectionProps {
 
 export default function DrinkSection({ categories }: DrinkSectionProps) {
   return (
-    <section className="py-[60px] md:py-[100px] bg-dark-cyan-green">
+    <section id="drinks" className="py-[60px] md:py-[100px] bg-dark-cyan-green scroll-mt-24">
       <div className="section-container">
         <SectionHeader
           subtitle="From the Bar"

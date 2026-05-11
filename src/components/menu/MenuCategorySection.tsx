@@ -3,11 +3,12 @@ import SpiceMeter from "./SpiceMeter";
 
 interface MenuCategorySectionProps {
   category: MenuCategory;
+  id?: string;
 }
 
-export default function MenuCategorySection({ category }: MenuCategorySectionProps) {
+export default function MenuCategorySection({ category, id }: MenuCategorySectionProps) {
   return (
-    <div>
+    <div id={id} className="scroll-mt-24">
       <div className="mb-8">
         <h3 className="font-jakarta font-semibold text-[24px] md:text-[30px] text-white mb-2">
           {category.name}

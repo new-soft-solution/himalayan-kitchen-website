@@ -27,7 +27,11 @@ export default function MenuPage() {
 
           <div className="mt-10 md:mt-16 space-y-12 md:space-y-16">
             {menuCategories.map((category, index) => (
-              <MenuCategorySection key={index} category={category} />
+              <MenuCategorySection
+                key={index}
+                category={category}
+                id={category.name.toLowerCase().replace(/[&\s]+/g, "-").replace(/-+/g, "-").replace(/'s/g, "s")}
+              />
             ))}
           </div>
         </div>

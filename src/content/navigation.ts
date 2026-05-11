@@ -20,7 +20,7 @@ export const footerQuickLinks: NavLink[] = [
 
 export const footerMenuLinks: NavLink[] = [
   { label: "Chef's Specials", href: "/menu#chefs-specials" },
-  { label: "Nepali Favorites", href: "/menu#nepali-favorites" },
+  { label: "All-Time Favorites", href: "/menu#all-time-favorites" },
   { label: "Tandoori & Grill", href: "/menu#tandoori-grill" },
   { label: "Vegetarian", href: "/menu#vegetarian" },
   { label: "Drinks & Bar", href: "/menu#drinks" },
