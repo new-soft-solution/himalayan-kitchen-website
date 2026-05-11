@@ -369,9 +369,9 @@ body {
 
 .whatsapp-float {
   position: fixed;
-  bottom: 80px;
-  right: 25px;
-  z-index: 100;
+  bottom: 32px;
+  right: 232px;
+  z-index: 2147483645;
   width: 56px;
   height: 56px;
   border-radius: 50%;
