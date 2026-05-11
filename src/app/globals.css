@@ -1,26 +1,414 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================
+   Himalayan Kitchen - Global Styles
+   Based on Restfast Template
+   ============================================ */
 
+/* Custom theme configuration (Tailwind v4) */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors - from Restfast template */
+  --color-primary: #DF3F01;
+  --color-primary-dark: #B83300;
+  --color-cyan: #1B3030;
+  --color-dark-cyan-green: #0F2727;
+  --color-deep-teal: #102B2A;
+  --color-dark-cyan: #0D2221;
+  --color-eerie-black: #171717;
+  --color-amber: #FFC107;
+  --color-bright-orange: #FB9015;
+  --color-light-coral: #FD8F77;
+  --color-gray: #888888;
+  --color-beer: #DD5903;
+  --color-burnt-orange: #EB662B;
+  --color-light-gray: #D9D9D9;
+  --color-charcoal: #141414;
+
+  /* Fonts */
+  --font-jost: var(--font-jost-var), "Jost", sans-serif;
+  --font-jakarta: var(--font-jakarta-var), "Plus Jakarta Sans", sans-serif;
+  --font-satisfy: var(--font-satisfy-var), "Satisfy", cursive;
+  --font-manrope: var(--font-manrope-var), "Manrope", sans-serif;
+  --font-poppins: var(--font-poppins-var), "Poppins", sans-serif;
+
+  /* Breakpoints */
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1272px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-deep-teal);
+  color: #ffffff;
+  font-family: var(--font-manrope);
+  overflow-x: hidden;
+}
+
+/* ============================================
+   Custom Component Utilities
+   ============================================ */
+
+.subtitle {
+  @apply text-[14px] lg:text-[18px] xl:text-[24px] leading-[30px] mb-3 lg:mb-[14px] xl:mb-[19px];
+}
+
+.title {
+  @apply text-[18px] lg:text-[40px] xl:text-[55px] lg:leading-[50px] xl:leading-[69px];
+}
+
+.section-container {
+  @apply mx-auto w-full max-w-[1272px] px-3;
+}
+
+/* ============================================
+   Button Styles
+   ============================================ */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn__ink {
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.btn__ink.animate {
+  animation: ripple-effect 0.65s linear;
+}
+
+/* ============================================
+   Sticky Header
+   ============================================ */
+
+.header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #102b2a;
+  animation: mymove 0.4s linear;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   Scroll to Top
+   ============================================ */
+
+.progress-wrap {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: #df3f01;
+  stroke-width: 4;
+  fill: none;
+  transition: all 200ms linear;
+}
+
+/* ============================================
+   Swiper Customizations
+   ============================================ */
+
+.swiper-slide {
+  transition: all 200ms ease-in-out;
+}
+
+.hero-slider .swiper-slide-active .banner-title {
+  animation: slideInLeft 0.8s ease-in;
+}
+
+.hero-slider .swiper-slide-active .banner-subtitle {
+  animation: slideInLeft 1s ease-in;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+.hero-slider .swiper-slide-active .banner-desc {
+  animation: slideInLeft 1.2s ease-in;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
+}
+
+.hero-slider .swiper-slide-active .banner-btn {
+  animation: slideInLeft 1.4s ease-in;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+}
+
+/* Testimonial swiper pagination */
+.testimonials .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  border: 2px solid #df3f01;
+  opacity: 1;
+}
+
+.testimonials .swiper-pagination-bullet-active {
+  background: #df3f01;
+}
+
+/* ============================================
+   Marquee Animation
+   ============================================ */
+
+.marquee-slider {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-slider:hover {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   Overlay & Hover Effects
+   ============================================ */
+
+.overlay-anim {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-anim::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-anim:hover::after {
+  opacity: 1;
+}
+
+.zoom-effect {
+  overflow: hidden;
+}
+
+.zoom-effect img {
+  transition: transform 0.5s ease;
+}
+
+.zoom-effect:hover img {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   Contact Info Card
+   ============================================ */
+
+.contact-info-card::after {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+}
+
+/* ============================================
+   Dashed Border Utilities
+   ============================================ */
+
+.dashed-border::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border: 1px dashed #df3f01;
+  width: 100%;
+}
+
+/* ============================================
+   Text Stroke Utilities
+   ============================================ */
+
+.text-stroke-primary {
+  -webkit-text-stroke: 1px #df3f01;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 1px #fff;
+}
+
+/* ============================================
+   Ripple / Pulse Animation (for video play button)
+   ============================================ */
+
+.popup-video {
+  position: relative;
+}
+
+.popup-video::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(223, 63, 1, 0.5);
+  animation: pulse-border 1100ms ease-out infinite;
+}
+
+/* ============================================
+   Keyframe Animations
+   ============================================ */
+
+@keyframes mymove {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-effect {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   WhatsApp Floating Button
+   ============================================ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 80px;
+  right: 25px;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* ============================================
+   Spice Meter
+   ============================================ */
+
+.spice-meter .chili {
+  transition: all 0.3s ease;
+}
+
+.spice-meter .chili.active {
+  color: #df3f01;
+}
+
+.spice-meter .chili.inactive {
+  color: #555555;
+}
+
+/* ============================================
+   Google Maps Dark Style
+   ============================================ */
+
+.map-container iframe {
+  filter: grayscale(0.3) contrast(1.1);
+  border-radius: 8px;
 }
