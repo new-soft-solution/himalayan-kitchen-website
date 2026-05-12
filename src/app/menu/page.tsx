@@ -47,7 +47,7 @@ export default function MenuPage() {
             Ready to Order?
           </h2>
           <h3 className="font-jakarta font-semibold text-[28px] md:text-[40px] text-white mb-6">
-            Reserve Your Table Now
+            Order Online Now
           </h3>
           <p className="font-manrope text-[15px] text-white/60 max-w-[500px] mx-auto mb-8">
             Book through FindATable or call us directly. Takeaway and delivery also available.

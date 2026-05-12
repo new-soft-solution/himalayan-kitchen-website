@@ -7,7 +7,7 @@ interface FindATableCTAProps {
 }
 
 export default function FindATableCTA({
-  text = "Reserve a Table",
+  text = "Order Online",
   className = "",
   size = "md",
 }: FindATableCTAProps) {

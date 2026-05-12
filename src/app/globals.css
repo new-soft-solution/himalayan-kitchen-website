@@ -8,8 +8,8 @@
 /* Custom theme configuration (Tailwind v4) */
 @theme inline {
   /* Colors - from Restfast template */
-  --color-primary: #DF3F01;
-  --color-primary-dark: #B83300;
+  --color-primary: #FB9015;
+  --color-primary-dark: #E07D0D;
   --color-cyan: #1B3030;
   --color-dark-cyan-green: #0F2727;
   --color-deep-teal: #102B2A;
@@ -135,7 +135,7 @@ body {
 }
 
 .progress-wrap svg.progress-circle path {
-  stroke: #df3f01;
+  stroke: #FB9015;
   stroke-width: 4;
   fill: none;
   transition: all 200ms linear;
@@ -176,12 +176,12 @@ body {
   width: 12px;
   height: 12px;
   background: transparent;
-  border: 2px solid #df3f01;
+  border: 2px solid #FB9015;
   opacity: 1;
 }
 
 .testimonials .swiper-pagination-bullet-active {
-  background: #df3f01;
+  background: #FB9015;
 }
 
 /* ============================================
@@ -251,7 +251,7 @@ body {
   position: absolute;
   top: 50%;
   left: 0;
-  border: 1px dashed #df3f01;
+  border: 1px dashed #FB9015;
   width: 100%;
 }
 
@@ -260,7 +260,7 @@ body {
    ============================================ */
 
 .text-stroke-primary {
-  -webkit-text-stroke: 1px #df3f01;
+  -webkit-text-stroke: 1px #FB9015;
 }
 
 .text-stroke-white {
@@ -284,7 +284,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 1px solid rgba(223, 63, 1, 0.5);
+  border: 1px solid rgba(251, 144, 21, 0.5);
   animation: pulse-border 1100ms ease-out infinite;
 }
 
@@ -397,7 +397,7 @@ body {
 }
 
 .spice-meter .chili.active {
-  color: #df3f01;
+  color: #FB9015;
 }
 
 .spice-meter .chili.inactive {

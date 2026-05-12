@@ -68,7 +68,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="font-jost text-[15px] text-white/70 hover:text-primary transition-colors"
                 >
-                  Book a Table
+                  Order Online
                 </a>
               </li>
             </ul>

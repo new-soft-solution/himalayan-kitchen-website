@@ -91,7 +91,7 @@ export default function Header() {
 
           {/* Book Now Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <FindATableCTA text="Book a Table" />
+            <FindATableCTA text="Order Online" />
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,7 +121,7 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <FindATableCTA text="Book a Table" className="mt-2" />
+              <FindATableCTA text="Order Online" className="mt-2" />
             </nav>
           </div>
         )}

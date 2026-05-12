@@ -13,10 +13,10 @@ export default function BookingCTA() {
 
       <div className="section-container relative z-10 text-center">
         <h2 className="font-satisfy font-normal text-[18px] md:text-[24px] text-primary mb-4">
-          Reserve Your Experience
+          Order Your Favorites
         </h2>
         <h3 className="font-jakarta font-semibold text-[28px] md:text-[40px] lg:text-[50px] leading-[1.2] text-white mb-4 md:mb-6">
-          Book Your Table Today
+          Order Online Today
         </h3>
         <p className="font-manrope text-[15px] md:text-[18px] text-white/70 max-w-[600px] mx-auto mb-8 md:mb-12 leading-[28px]">
           Experience authentic Himalayan flavors in our cozy {restaurant.seatingCapacity}-seat
@@ -24,7 +24,7 @@ export default function BookingCTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <FindATableCTA text="Reserve a Table" size="lg" />
+          <FindATableCTA text="Order Online" size="lg" />
           <a
             href={`tel:${restaurant.phone}`}
             className="btn inline-flex items-center justify-center gap-2 border-2 border-white/30 px-10 py-4 rounded-md font-jost font-semibold text-[18px] text-white hover:border-primary hover:text-primary transition-colors"

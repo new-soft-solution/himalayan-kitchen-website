@@ -7,7 +7,7 @@ export const heroSlides: HeroSlide[] = [
     title: "Authentic Flavors from the Roof of the World",
     description:
       "Experience the rich culinary traditions of Nepal and India in the heart of Amsterdam. Fresh spices, pure ingredients, unforgettable taste.",
-    buttonText: "Reserve a Table",
+    buttonText: "Order Online",
     buttonLink: EXTERNAL_LINKS.findATable,
     image: "/images/food/food-spread.jpg",
   },
