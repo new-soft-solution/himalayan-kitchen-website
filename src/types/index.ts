@@ -57,10 +57,17 @@ export interface HeroSlide {
   image: string;
 }
 
+export interface MenuItemVariant {
+  label: string;
+  price: number;
+}
+
 export interface MenuItem {
   name: string;
   description: string;
+  descriptionNl?: string;
   price: number;
+  variants?: MenuItemVariant[];
   spiceLevel: 1 | 2 | 3 | 4 | 5;
   isVegan?: boolean;
   isVegetarian?: boolean;
@@ -71,6 +78,9 @@ export interface MenuItem {
 export interface MenuCategory {
   name: string;
   description?: string;
+  descriptionNl?: string;
+  note?: string;
+  noteNl?: string;
   items: MenuItem[];
 }
 

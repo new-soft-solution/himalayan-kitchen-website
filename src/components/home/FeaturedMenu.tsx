@@ -41,7 +41,7 @@ export default function FeaturedMenu() {
                     {item.name}
                   </h4>
                   <span className="font-jost font-bold text-[16px] lg:text-[18px] text-primary whitespace-nowrap">
-                    &euro;{item.price.toFixed(2)}
+                    {item.variants ? "from " : ""}&euro;{item.price.toFixed(2)}
                   </span>
                 </div>
                 <div className="relative my-2 dashed-border h-[1px]" />
