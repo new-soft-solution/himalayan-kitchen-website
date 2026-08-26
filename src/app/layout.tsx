@@ -113,7 +113,8 @@ export default function RootLayout({
         <WhatsAppButton />
         <Script
           src="https://findatable.nl/js/find-a-table.js"
-          data-access-key="findatable_3a78a1a1c6fe1ff516547669961775c84dd1f062"
+          data-access-key="findatable_fa334a912a5c8939e3649f1a5f6c66579cf8f182"
+          data-widget-mode="group"
           strategy="afterInteractive"
         />
       </body>
