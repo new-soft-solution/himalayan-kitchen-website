@@ -1,58 +1,49 @@
 export const aboutContent = {
-  intro: {
-    subtitle: "Our Story",
-    title: "From the Himalayas to Amsterdam",
-    description:
-      "What began as one man's dream to share the flavors of his homeland has become one of Amsterdam's most cherished dining destinations. The Himalayan Kitchen is more than a restaurant — it's a bridge between two worlds.",
+  "intro": {
+    "subtitle": "Our Story",
+    "title": "From the Himalayas to Amsterdam"
   },
-  story: {
-    paragraphs: [
-      "In 2014, Surya Raj Giri opened the doors of The Himalayan Kitchen on Ten Katestraat in Amsterdam's vibrant Kinkerbuurt neighborhood. Having lived in Amsterdam for over 25 years, Surya had long dreamed of creating a place where the authentic tastes of Nepal could find a home in the heart of the Netherlands.",
-      "Every dish on our menu tells a story — of recipes passed down through generations in Nepali kitchens, of spices carefully sourced and blended by hand, of a tradition that stretches from the foothills of the Himalayas to the canals of Amsterdam.",
-      "Today, The Himalayan Kitchen is a beloved local gem where families celebrate, friends gather, and travelers discover the warm hospitality and bold flavors of Nepalese and Indian cuisine. Our intimate 32-seat dining room, adorned with Nepali art and Himalayan photography, creates an atmosphere that transports you thousands of miles with every bite.",
-    ],
+  "story": {
+    "paragraphs": [
+      "Nestled in Amsterdam Oud-West, just around the corner from De Hallen, The Himalayan Kitchen brings together the distinctive flavours of Nepalese and Indian cuisine in a warm, welcoming restaurant. Since 2014, we have offered a relaxed place to discover comforting Himalayan dishes, vibrant spices and thoughtful hospitality.",
+      "Our menu celebrates the character and variety of the region: handmade momo served with traditional achar, hearty daal bhaat, aromatic curries, tandoor-grilled specialities and flavourful vegetarian dishes. Each dish is prepared with attention to balance, texture and the distinctive spices that give these cuisines their identity.",
+      "With just 32 seats, our intimate dining room offers a comfortable alternative to the bustle of the surrounding neighbourhood. Whether you are joining us for a leisurely evening, a meal before a film at FilmHallen, or dinner with family and friends, we invite you to enjoy genuine flavours and warm hospitality in the heart of Amsterdam Oud-West."
+    ]
   },
-  values: [
+  "values": [
     {
-      title: "Authentic Recipes",
-      description:
-        "Our recipes are rooted in generations of Himalayan cooking heritage, prepared the traditional way with no shortcuts.",
+      "title": "Rooted in Tradition",
+      "description": "Our menu draws on the culinary traditions of Nepal and India, from comforting daal bhaat and handmade momo to carefully spiced curries and tandoori dishes."
     },
     {
-      title: "Fresh Ingredients",
-      description:
-        "We use only the freshest spices and highest quality ingredients, sourced daily to ensure every dish is at its best.",
+      "title": "Thoughtfully Prepared",
+      "description": "We focus on flavour, freshness and balance, using complementary spices and cooking techniques suited to each dish."
     },
     {
-      title: "Warm Hospitality",
-      description:
-        "In Nepali culture, every guest is treated like family. We bring that same warmth and care to every visit.",
-    },
+      "title": "A Warm Welcome",
+      "description": "Enjoy attentive, friendly service in an intimate dining room where guests can settle in, share a meal and enjoy the moment."
+    }
   ],
-  himalayaToAmsterdam: {
-    subtitle: "A Culinary Journey",
-    title: "Where Nepal Meets Amsterdam",
-    steps: [
+  "himalayaToAmsterdam": {
+    "subtitle": "A Culinary Journey",
+    "title": "Where Nepal Meets Amsterdam",
+    "steps": [
       {
-        title: "Himalayan Roots",
-        description:
-          "Born in the shadow of the world's highest peaks, our culinary traditions are as ancient as the mountains themselves.",
+        "title": "Himalayan Inspiration",
+        "description": "Explore the comforting flavours, fragrant spices and diverse food traditions of Nepal and the wider Himalayan region."
       },
       {
-        title: "25 Years in Amsterdam",
-        description:
-          "Surya Raj Giri brought his passion and knowledge to the Netherlands, building a life and a dream in this vibrant city.",
+        "title": "A Place in Oud-West",
+        "description": "Since 2014, The Himalayan Kitchen has welcomed guests on Ten Katestraat, close to Foodhallen and FilmHallen."
       },
       {
-        title: "The Himalayan Kitchen",
-        description:
-          "Since 2014, our restaurant has been a beacon of authentic Nepalese and Indian flavors in the Kinkerbuurt neighborhood.",
+        "title": "Made to Be Shared",
+        "description": "Discover handmade momo, warming curries, daal bhaat, tandoori favourites and vegetarian dishes, ideal for sharing around the table."
       },
       {
-        title: "Your Table Awaits",
-        description:
-          "Join us for an unforgettable culinary journey — where every dish carries a piece of Nepal to your plate in Amsterdam.",
-      },
-    ],
-  },
+        "title": "Your Evening Starts Here",
+        "description": "Step inside for a relaxed dinner, gather with friends or enjoy a meal before your film. We look forward to welcoming you."
+      }
+    ]
+  }
 };

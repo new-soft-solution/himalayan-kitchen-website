@@ -21,6 +21,8 @@ export function getRestaurantSchema(locale: Locale = "en") {
         telephone: restaurant.phone,
         email: restaurant.email,
         priceRange: restaurant.priceRange,
+        foundingDate: String(restaurant.foundedYear),
+        logo: `${SITE_CONFIG.url}/images/logo.png`,
         servesCuisine: restaurant.cuisineTypes,
         image: [
           SITE_CONFIG.url + foodPhotos.currySpread.src,
@@ -64,7 +66,7 @@ export function getRestaurantSchema(locale: Locale = "en") {
           },
         ],
         parentOrganization: { "@id": `${SITE_CONFIG.url}/#organization` },
-        sameAs: [EXTERNAL_LINKS.findATable, EXTERNAL_LINKS.googleReviews],
+        sameAs: [EXTERNAL_LINKS.findATable],
       },
       {
         "@type": "Organization",
@@ -83,6 +85,21 @@ export function getRestaurantSchema(locale: Locale = "en") {
         publisher: { "@id": `${SITE_CONFIG.url}/#organization` },
       },
     ],
+  };
+}
+
+export function getWebPageSchema(name: string, path: string, locale: Locale) {
+  const url = SITE_CONFIG.url + localizedPath(path, locale);
+  return {
+    "@context": "https://schema.org",
+    "@type": path === "/about" ? "AboutPage" : path === "/contact" ? "ContactPage" : "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name,
+    inLanguage: locale === "nl" ? "nl-NL" : "en",
+    isPartOf: { "@id": `${SITE_CONFIG.url}/#website` },
+    about: { "@id": `${SITE_CONFIG.url}/#restaurant` },
+    publisher: { "@id": `${SITE_CONFIG.url}/#organization` },
   };
 }
 

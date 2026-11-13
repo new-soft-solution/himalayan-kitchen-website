@@ -108,13 +108,13 @@ export default function Footer({ locale = "en" }: LocaleProps) {
           {t("All rights reserved.")}
         </p>
         <p className="footer-credit">
-          Powered by{" "}
+          Powered by:{" "}
           <a
             href="http://newsoftsolution.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            New Soft Solution
+            NSS
           </a>
         </p>
       </div>

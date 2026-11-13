@@ -28,7 +28,21 @@ const { menuCategories } = source('src/content/menu.ts');
 const dishes = menuCategories.flatMap((category) => category.items);
 const { dutch } = source('src/content/translations.ts');
 const { createTranslator, localizedPath, pagePaths } = source('src/lib/i18n.ts');
-const fixture = fs.readFileSync(path.join(__dirname, 'menu-source.csv'), 'utf8').trim().split('\n').slice(1).map((line) => {
+
+test('website source and translation bundles contain no removed founder identity', () => {
+  function scan(directory) {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const filename = path.join(directory, entry.name);
+      if (entry.isDirectory()) scan(filename);
+      else if (/\.tsx?$/.test(entry.name)) {
+        assert.doesNotMatch(fs.readFileSync(filename, 'utf8'), /\b(?:surya|suray|giri)\b/i, path.relative(root, filename));
+      }
+    }
+  }
+  scan(path.join(root, 'src'));
+});
+
+const fixture = fs.readFileSync(path.join(__dirname, 'menu-source.csv'), 'utf8').trim().split(/\r?\n/).slice(1).map((line) => {
   const [, id, name, price] = line.match(/^(\d{2}),(.*),(\d+\.\d{2})$/);
   return { id, name: name.replace(/^"|"$/g, ''), price: Number(price) };
 });

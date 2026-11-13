@@ -4,9 +4,9 @@ export const restaurant: Restaurant = {
   name: "The Himalayan Kitchen",
   tagline: "Authentic Nepalese & Indian Cuisine in Amsterdam",
   description:
-    "The Himalayan Kitchen is an authentic Nepalese and Indian restaurant in the heart of Amsterdam's Kinkerbuurt neighborhood. Since 2014, we have been serving flavorful dishes made with pure ingredients, bringing the rich culinary traditions of Nepal and India to the vibrant streets of Amsterdam. Our recipes are rooted in generations of Himalayan cooking heritage, prepared with fresh spices and the finest ingredients. Cozy 32-seat dining room.",
+    "Discover Nepalese and Indian flavours at The Himalayan Kitchen, a welcoming 32-seat restaurant in Amsterdam Oud-West. Our menu brings together handmade momo, classic daal bhaat, aromatic curries, tandoor-grilled dishes and vegetarian favourites. Just steps from De Hallen, we offer a relaxed setting for a memorable dinner before or after exploring the neighbourhood.",
   shortDescription:
-    "An authentic Nepalese and Indian restaurant that serves up flavorful dishes made with pure ingredients.",
+    "The Himalayan Kitchen brings Nepalese and Indian cuisine to Amsterdam Oud-West, with handmade momo, fragrant curries, tandoori specialities and warm hospitality.",
   address: {
     street: "Ten Katestraat 45H",
     postalCode: "1053 BX",
@@ -28,7 +28,6 @@ export const restaurant: Restaurant = {
   ],
   seatingCapacity: 32,
   foundedYear: 2014,
-  owner: "Surya Raj Giri",
   priceRange: "€€",
   rating: 4.6,
   ratingCount: 1,

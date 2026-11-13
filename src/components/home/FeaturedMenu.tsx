@@ -23,6 +23,9 @@ export default function FeaturedMenu({ locale = "en" }: LocaleProps) {
           subtitle={t("Our Menu")}
           title={t("Explore Our Signature Dishes")}
         />
+        <p className="text-center text-white/70 max-w-2xl mx-auto mt-4">
+          {t("Handmade Nepalese dumplings with a choice of fillings, served with sesame-tomato achar.")}
+        </p>
         <div className="featured-menu-list">
           {highlights.map((item) => {
             const photo = dishSectionPhotos[item.id || ""];

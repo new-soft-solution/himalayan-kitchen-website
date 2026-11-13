@@ -86,7 +86,7 @@ export default async function ContactPage({ params }: LocalizedPageProps) {
 
               </div>
 
-              <div className="mt-7"><h2 className="text-primary mb-2">{t("In the heart of Oud-West")}</h2><p className="text-sm text-white/75">{t("Find a relaxed table on Ten Katestraat, just around the corner from Foodhallen and Filmhallen. Let us know your film time for a promptly served meal beforehand, or join us for a relaxed dinner afterwards.")}</p><a href={EXTERNAL_LINKS.googleMapsLink} target="_blank" rel="noopener noreferrer" className="button button-outline mt-4">{t("Directions")}</a></div>
+              <div className="mt-7"><h2 className="text-primary mb-2">{t("In the heart of Oud-West")}</h2><p className="text-sm text-white/75">{t("Enjoy an inviting Nepalese or Indian dinner near FilmHallen. Let our team know your film time when ordering.")}</p><a href={EXTERNAL_LINKS.googleMapsLink} target="_blank" rel="noopener noreferrer" className="button button-outline mt-4">{t("Directions")}</a></div>
 
               <p className="reservation-note mt-6">{t("For table reservations, use the Find A Table widget on this page.")}</p>
 

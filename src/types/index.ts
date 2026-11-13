@@ -28,7 +28,6 @@ export interface Restaurant {
   openingHours: OpeningHours[];
   seatingCapacity: number;
   foundedYear: number;
-  owner: string;
   priceRange: string;
   rating: number;
   ratingCount: number;

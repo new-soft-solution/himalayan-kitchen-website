@@ -22,12 +22,12 @@ const pages = {
   about: {
     path: "/about",
     en: [
-      "Our Story | The Himalayan Kitchen Amsterdam",
-      "Meet the people and traditions behind The Himalayan Kitchen. Nepalese and Indian hospitality in Amsterdam's Kinkerbuurt since 2014.",
+      "About Our Nepalese & Indian Restaurant | Himalayan Kitchen",
+      "Nepalese and Indian dining in Amsterdam Oud-West since 2014. Discover handmade momo, daal bhaat and warm hospitality near De Hallen and FilmHallen.",
     ],
     nl: [
-      "Ons verhaal | The Himalayan Kitchen Amsterdam",
-      "Ontdek de mensen en tradities achter The Himalayan Kitchen. Nepalese en Indiase gastvrijheid in de Amsterdamse Kinkerbuurt sinds 2014.",
+      "Ons Nepalese & Indiase restaurant | Himalayan Kitchen",
+      "Nepalees en Indiaas dineren in Amsterdam Oud-West sinds 2014. Ontdek handgemaakte momo, daal bhaat en warme gastvrijheid bij De Hallen en FilmHallen.",
     ],
   },
   menu: {
@@ -67,11 +67,11 @@ const pages = {
     path: "/chef",
     en: [
       "Meet Chef Ram Lama | The Himalayan Kitchen Amsterdam",
-      "Meet Ram Lama, the head chef of The Himalayan Kitchen, and discover his passion for fresh ingredients and traditional Nepalese and Indian cooking.",
+      "Meet Chef Ram Lama, whose experience in Dubai hotels and Hyatt Regency Amsterdam shapes the Indian and Nepalese cuisine at The Himalayan Kitchen.",
     ],
     nl: [
       "Chef Ram Lama | The Himalayan Kitchen Amsterdam",
-      "Maak kennis met Ram Lama, chef-kok van The Himalayan Kitchen. Ontdek zijn passie voor verse ingrediënten en de traditionele Nepalese en Indiase keuken.",
+      "Maak kennis met chef Ram Lama. Zijn ervaring in hotels in Dubai en bij Hyatt Regency Amsterdam vormt zijn Indiase en Nepalese keuken bij The Himalayan Kitchen.",
     ],
   },
   gallery: {
@@ -119,6 +119,11 @@ export function getPageMetadata(
   return {
     title: { absolute: title },
     description,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    },
     alternates: {
       canonical: url,
       languages: {

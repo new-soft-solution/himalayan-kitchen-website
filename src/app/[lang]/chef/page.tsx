@@ -20,27 +20,25 @@ export default async function ChefPage({ params }: LocalizedPageProps) {
 
       <section className="py-8 md:py-10">
         <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[340px_minmax(0,1fr)] gap-7 lg:gap-12 items-center">
             {/* Chef Image */}
-            <div className="relative">
-              <div className="rounded-lg overflow-hidden bg-dark-cyan-green aspect-[3/4] max-w-[440px]">
+            <div className="w-full max-w-[300px] sm:max-w-[340px] mx-auto lg:mx-0">
+              <div className="rounded-lg overflow-hidden bg-dark-cyan-green aspect-[4/5]">
                 <Image
                   src={chefProfile.image!}
                   alt={chefProfile.name}
                   width={1122}
                   height={1402}
-                  sizes="(max-width: 767px) 100vw, 440px"
+                  sizes="(max-width: 343px) calc(100vw - 44px), (max-width: 639px) 300px, 340px"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              {/* Decorative accent */}
-              <div className="absolute -bottom-4 -right-4 w-[120px] h-[120px] rounded-full border-2 border-primary/20 pointer-events-none hidden md:block" />
             </div>
 
             {/* Chef Info */}
-            <div>
+            <div className="max-w-[70ch]">
               <SectionHeader
-                subtitle={t("The Heart Behind the Kitchen")}
+                subtitle={t("Culinary Craftsmanship")}
                 title={chefProfile.name}
                 centered={false}
               />

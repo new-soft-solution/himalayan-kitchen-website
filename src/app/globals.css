@@ -154,7 +154,7 @@ img { max-width: 100%; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr .8fr 1fr 1.2fr; gap: 44px; padding-block: 30px 26px; }
 .footer-grid h2 { color: #FB9015; font-size: 12px; font-weight: 600; letter-spacing: .04em; margin-block: 14px 20px; }
 .footer-grid a, .footer-grid p { color: #b9c8c2; font-size: 12px; line-height: 1.9; }
-.footer-grid a:hover { color: #FB9015; }
+.footer-grid a:hover, .footer-grid a:focus-visible { color: #bed8cc; }
 .footer-brand > a { display: block; margin-top: 12px; }
 .footer-brand > a:first-child { margin: 0 0 14px; }
 .footer-brand > p { max-width: 280px; }
@@ -322,7 +322,6 @@ img { max-width: 100%; }
 .subpage-mountains, .story-mountains { position: absolute; bottom: 0; left: 0; width: 100%; pointer-events: none; color: #ffffff; opacity: .05; }
 .subpage-mountains { height: 100px; }
 .story-mountains { height: 200px; }
-.subpage-mandala { position: absolute; top: 50%; right: -100px; width: 250px; height: 250px; border: 1px solid #FB901515; border-radius: 50%; transform: translateY(-50%); pointer-events: none; }
 @media (max-width: 639px) { .dishes-grid { grid-template-columns: 1fr; } .dish-card-image { aspect-ratio: 1.6; } }
 
 /* Fine-dining refinements retain the template's orange, teal and mountain identity. */
@@ -366,8 +365,10 @@ img { max-width: 100%; }
 .contact-info > .mt-8 { margin-top: 20px; }
 .contact-map { min-height: 400px; }
 .footer-grid h2 { font-family: var(--font-display-var), Georgia, serif; font-weight: 600; font-size: 22px; margin-bottom: 14px; }
-.footer-credit a { color: #ffffff; text-decoration: underline; text-underline-offset: 4px; }
-.footer-credit a:hover { color: #FB9015; }
+.footer-credit { color: #28423f; }
+.footer-credit a { color: inherit; text-decoration: none; }
+.footer-credit a:hover { color: #3e5a55; text-decoration: none; }
+.footer-credit a:focus-visible { color: #bed8cc; }
 
 
 

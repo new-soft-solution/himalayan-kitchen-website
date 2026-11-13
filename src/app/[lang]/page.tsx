@@ -10,11 +10,13 @@ import Testimonials from "@/components/home/Testimonials";
 import PhotoMarquee from "@/components/home/PhotoMarquee";
 import { getPageMetadata } from "@/lib/seo";
 import { getPageLocale } from "@/lib/locale-server";
+import StructuredData from "@/components/shared/StructuredData";
+import { getWebPageSchema } from "@/lib/schema";
 import type { LocalizedPageProps } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: LocalizedPageProps) { return getPageMetadata("home", await getPageLocale(params)); }
 
 export default async function Home({ params }: LocalizedPageProps) {
   const locale = await getPageLocale(params);
-  return <><HeroBanner /><OurRestaurant locale={locale} /><HimalayaStory locale={locale} /><FeaturedMenu locale={locale} /><StatsCounter locale={locale} /><FeaturedDishes locale={locale} /><BookingCTA locale={locale} /><Testimonials /><LocalDining locale={locale} /><PhotoMarquee locale={locale} /></>;
+  return <><StructuredData data={getWebPageSchema("The Himalayan Kitchen", "/", locale)} /><HeroBanner /><OurRestaurant locale={locale} /><HimalayaStory locale={locale} /><FeaturedMenu locale={locale} /><StatsCounter locale={locale} /><FeaturedDishes locale={locale} /><BookingCTA locale={locale} /><Testimonials locale={locale} /><LocalDining locale={locale} /><PhotoMarquee locale={locale} /></>;
 }

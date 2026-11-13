@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { createTranslator, localizedPath, type LocaleProps } from "@/lib/i18n";
-import { getBreadcrumbSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getWebPageSchema } from "@/lib/schema";
 import StructuredData from "./StructuredData";
 import type { NavLink } from "@/types";
 
@@ -33,7 +33,6 @@ export default function SubPageBanner({
           fill="currentColor"
         />
       </svg>
-      <div className="subpage-mandala" aria-hidden="true" />
       <div className="section-container">
         <p className="eyebrow">The Himalayan Kitchen · Amsterdam</p>
         <h1>{t(title)}</h1>
@@ -51,6 +50,7 @@ export default function SubPageBanner({
           <span aria-current="page">{t(breadcrumb || title)}</span>
         </nav>
       </div>
+      {path && <StructuredData data={getWebPageSchema(t(title), path, locale)} />}
       {path && (
         <StructuredData
           data={getBreadcrumbSchema(

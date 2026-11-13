@@ -51,13 +51,40 @@ function NavigationGroup({
       data-layout={layout}
       data-navigation-group={group.label}
       data-current={isCurrent || undefined}
-      name="header-navigation-group"
+      name={`header-navigation-${layout}`}
+      onPointerEnter={(event) => {
+        if (layout === "desktop" && event.pointerType === "mouse")
+          event.currentTarget.open = true;
+      }}
+      onPointerLeave={(event) => {
+        if (
+          layout === "desktop" &&
+          event.pointerType === "mouse" &&
+          !event.currentTarget.contains(document.activeElement)
+        ) event.currentTarget.open = false;
+      }}
       onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget))
-          event.currentTarget.open = false;
+        const details = event.currentTarget;
+        if (event.relatedTarget) {
+          if (!details.contains(event.relatedTarget)) details.open = false;
+          return;
+        }
+        // Some browsers omit relatedTarget when a pointer moves focus to a link.
+        // Let focus settle before hiding the link that is being activated.
+        requestAnimationFrame(() => {
+          if (!details.contains(document.activeElement) && !details.matches(":hover"))
+            details.open = false;
+        });
       }}
     >
-      <summary>
+      <summary onClick={(event) => {
+        // A mouse click must not close a menu that just opened on hover.
+        // Keyboard activation keeps the native details toggle behaviour.
+        if (layout === "desktop" && event.detail > 0) {
+          event.preventDefault();
+          if (detailsRef.current) detailsRef.current.open = true;
+        }
+      }}>
         {t(group.label)}
         <FiChevronDown aria-hidden="true" size={15} />
       </summary>
@@ -67,7 +94,7 @@ function NavigationGroup({
             key={link.href}
             href={localizedPath(link.href, locale)}
             aria-current={pathname === link.href ? "page" : undefined}
-            onClick={handleNavigate}
+            onNavigate={handleNavigate}
           >
             {t(link.label)}
           </Link>

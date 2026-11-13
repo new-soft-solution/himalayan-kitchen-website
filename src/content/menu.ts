@@ -22,8 +22,8 @@ export const menuCategories: MenuCategory[] = [
       {
         "id": "02",
         "name": "Mixed Vegetable Pakora",
-        "description": "Seasonal vegetables dipped in a fragrant chickpea-flour batter, fried until crisp and golden.",
-        "descriptionNl": "Seizoensgroenten in een geurig kikkererwtenbeslag, krokant en goudbruin gefrituurd.",
+        "description": "Seasonal vegetables coated in a lightly spiced chickpea-flour batter and fried until golden.",
+        "descriptionNl": "Seizoensgroenten in een licht gekruid kikkererwtenbeslag, goudbruin gefrituurd.",
         "price": 8.95,
         "nameNl": "Mixed Vegetable Pakora",
         "allergens": []
@@ -31,8 +31,8 @@ export const menuCategories: MenuCategory[] = [
       {
         "id": "03",
         "name": "Vegetable Samosa",
-        "description": "Crisp pastry parcels filled with gently spiced potato and peas.",
-        "descriptionNl": "Knapperig deeg gevuld met zacht gekruide aardappel en erwten.",
+        "description": "Golden pastry parcels filled with gently spiced potatoes and peas.",
+        "descriptionNl": "Goudbruine deegpakketjes gevuld met zacht gekruide aardappelen en erwten.",
         "price": 7.95,
         "nameNl": "Vegetable Samosa",
         "allergens": [
@@ -95,8 +95,8 @@ export const menuCategories: MenuCategory[] = [
       {
         "id": "09",
         "name": "Himalayan Sheekh Kabab",
-        "description": "Succulent minced lamb, hand-shaped onto skewers with ginger, garlic and select spices, grilled in the tandoor.",
-        "descriptionNl": "Sappig lamsgehakt aan spies, gekruid met gember, knoflook en geselecteerde specerijen, gegrild in de tandoor.",
+        "description": "Minced lamb seasoned with ginger, garlic and aromatic spices, shaped onto skewers and grilled in the tandoor.",
+        "descriptionNl": "Lamsgehakt op smaak gebracht met gember, knoflook en aromatische specerijen, aan spiesjes gevormd en gegrild in de tandoor.",
         "price": 10.5,
         "nameNl": "Himalayan Sheekh Kabab",
         "allergens": []
@@ -178,8 +178,8 @@ export const menuCategories: MenuCategory[] = [
       {
         "id": "16",
         "name": "Himalayan Daal Bhaat Set",
-        "description": "A typical Nepali everyday dish served with lentils, seasonal vegetable curry, raita, and homemade pickle as the basics. DAAL BHAT POWER 24 HOURS.",
-        "descriptionNl": "Een typisch Nepalees alledaags gerecht geserveerd met linzen, seizoensgroentencurry, raita en zelfgemaakte augurk als basis.",
+        "description": "A comforting Nepalese set with basmati rice, lentils, seasonal vegetable curry, raita and homemade pickle, with your chosen main option.",
+        "descriptionNl": "Een verwarmende Nepalese maaltijd met basmatirijst, linzen, seizoensgroentencurry, raita en huisgemaakte pickle, met je gekozen hoofdgerecht.",
         "price": 22.95,
         "variants": [
           {
@@ -414,8 +414,8 @@ export const menuCategories: MenuCategory[] = [
       {
         "id": "28",
         "name": "Tikka Masala",
-        "description": "Marinated, grilled chicken in a creamy tomato sauce enriched with garam masala and aromatic spices.",
-        "descriptionNl": "Gemarineerde, gegrilde kip in een romige tomatensaus met garam masala en aromatische specerijen.",
+        "description": "Your choice of chicken, lamb or prawns in a creamy, tomato-based sauce with garam masala and aromatic spices.",
+        "descriptionNl": "Kip, lamsvlees of garnalen naar keuze in een romige tomatensaus met garam masala en aromatische specerijen.",
         "price": 21.95,
         "variants": [
           {
@@ -563,8 +563,8 @@ export const menuCategories: MenuCategory[] = [
       {
         "id": "34",
         "name": "Gorkha Curry",
-        "description": "A Nepali-style curry, slow-cooked in a thick aromatic sauce with fenugreek, turmeric, cumin and coriander.",
-        "descriptionNl": "Nepalese curry, langzaam gegaard in een dikke aromatische saus met fenegriek, kurkuma, komijn en koriander.",
+        "description": "A fragrant Nepalese-style curry with fenugreek, turmeric, cumin and coriander, prepared with your chosen protein.",
+        "descriptionNl": "Een geurige Nepalese curry met fenegriek, kurkuma, komijn en koriander, bereid met je gekozen vlees of garnalen.",
         "price": 21.95,
         "variants": [
           {

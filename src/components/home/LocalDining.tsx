@@ -41,7 +41,7 @@ export default function LocalDining({ locale = "en" }: LocaleProps) {
             <h3>{t("An evening at Filmhallen?")}</h3>
             <p>
               {t(
-                "Enjoy a delicious, promptly served meal before your film—let us know your showtime when you arrive. Afterwards, settle in for a relaxed dinner and a little more conversation.",
+                "Enjoy an inviting Nepalese or Indian dinner near FilmHallen. Let our team know your film time when ordering.",
               )}
             </p>
           </div>

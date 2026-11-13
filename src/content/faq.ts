@@ -3,7 +3,7 @@ import type { FAQItem } from "@/types";
 export const faqItems: FAQItem[] = [
   {
     question: "Can we dine before a film at Filmhallen?",
-    answer: "Yes. We’re a short walk from Filmhallen. Tell our team your showtime when you arrive so we can help you enjoy a delicious, promptly served meal before the film. Prefer to take your time? Join us for a relaxed dinner afterwards.",
+    answer: "Enjoy an inviting Nepalese or Indian dinner near FilmHallen. Let our team know your film time when ordering.",
   },
   {
     question: "Are you near Foodhallen and De Hallen?",
@@ -12,7 +12,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Do I need to make a reservation?",
     answer:
-      "While walk-ins are welcome, we strongly recommend making a reservation, especially for Friday and Saturday evenings. Our intimate dining room seats 32 guests, so booking ahead ensures your table is ready. You can reserve using the Find A Table reservation widget on this page.",
+      "Walk-ins are welcome, and we recommend reserving ahead for Friday and Saturday evenings. Our intimate dining room seats 32 guests. Use Reserve a Table to visit our FindATable reservation page, or contact us to discuss your plans.",
   },
   {
     question: "What are your opening hours?",
