@@ -1,7 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { A11y, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { FaStar } from "react-icons/fa";
@@ -10,26 +10,30 @@ import { testimonials } from "@/content/testimonials";
 import { EXTERNAL_LINKS } from "@/lib/constants";
 import SectionHeader from "@/components/shared/SectionHeader";
 
+import { useLocale, useTranslation } from "@/components/layout/LocaleProvider";
+
 export default function Testimonials() {
+  const t = useTranslation();
+  const locale = useLocale();
   return (
-    <section className="testimonials py-[60px] md:py-[100px] overflow-hidden">
+    <section className="testimonials py-8 md:py-10 overflow-hidden">
       <div className="section-container">
         <SectionHeader
-          subtitle="Customer Reviews"
-          title="What Our Guests Say"
+          subtitle={t("Customer Reviews")}
+          title={t("What Our Guests Say")}
         />
 
-        <div className="mt-10 md:mt-16">
+        <div className="mt-6 md:mt-8">
           <Swiper
-            modules={[Autoplay, Pagination]}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            modules={[A11y, Pagination]}
             pagination={{ clickable: true }}
+            a11y={{ paginationBulletMessage: locale === "nl" ? "Ga naar recensie {{index}}" : "Go to review {{index}}" }}
             spaceBetween={24}
             slidesPerView={1}
             breakpoints={{
               768: { slidesPerView: 2 },
             }}
-            className="pb-14"
+            className="pb-14!"
           >
             {testimonials.map((review, index) => (
               <SwiperSlide key={index}>
@@ -40,16 +44,17 @@ export default function Testimonials() {
                       <FaStar
                         key={i}
                         size={16}
-                        className={i < review.rating ? "text-amber" : "text-white/20"}
+                        className={i < review.rating ? "text-amber" : "text-white/70"}
                       />
                     ))}
                   </div>
 
                   {/* Review Text */}
                   <p className="font-manrope text-[14px] md:text-[15px] leading-[26px] text-white/80 mb-6">
-                    &ldquo;{review.text}&rdquo;
+                    &ldquo;{t(review.text)}&rdquo;
                   </p>
 
+                  {locale === "nl" && <p className="text-xs text-white/70 mb-4">{t("Translated from English")}</p>}
                   {/* Reviewer */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -64,7 +69,7 @@ export default function Testimonials() {
                           {review.name}
                         </h4>
                         {review.date && (
-                          <p className="font-manrope text-[12px] text-white/40">
+                          <p className="font-manrope text-[12px] text-white/70">
                             {review.date}
                           </p>
                         )}
@@ -89,7 +94,7 @@ export default function Testimonials() {
             className="inline-flex items-center gap-2 font-jost text-[15px] text-white/60 hover:text-primary transition-colors"
           >
             <FcGoogle size={18} />
-            See all reviews on Google
+            {t("See all reviews on Google")}
           </a>
         </div>
       </div>

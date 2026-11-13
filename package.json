@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack --port 6500",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "next start --port 6500",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "node tests/content.test.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

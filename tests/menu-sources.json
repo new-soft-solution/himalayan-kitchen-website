@@ -1,0 +1,14 @@
+{
+  "food": {
+    "source": "himalayan_cuisine_menu_2026.pdf",
+    "download": "/menus/food-menu.pdf",
+    "sha256": "c949867c509d506f7d5f9c77e2309cabf78b9cc806910f14af57cd1807516df3",
+    "pages": 12
+  },
+  "drinks": {
+    "source": "himalayan_drink_menu_2026.pdf",
+    "download": "/menus/drinks-menu.pdf",
+    "sha256": "a0fa421a78a2c7f192c20b0d0b00eb9a37823981f393df90f725042f91618ad7",
+    "pages": 8
+  }
+}

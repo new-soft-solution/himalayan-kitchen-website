@@ -1,717 +1,1142 @@
 import type { MenuCategory } from "@/types";
+import { foodPhotos } from "@/content/photography";
 
+// Source: himalayan_cuisine_menu_2026.pdf, pages 6–11 (75 numbered dishes).
+// IDs are the printed dish numbers. Allergen symbols follow the printed menu;
+// they are not a complete ingredients audit and can vary by protein choice.
 export const menuCategories: MenuCategory[] = [
   {
-    name: "Appetisers Veg",
-    items: [
+    "id": "starters",
+    "name": "Starters",
+    "nameNl": "Voorgerechten",
+    "items": [
       {
-        name: "Pappadums",
-        description:
-          "A traditional Nepali and Indian snack made from lentil flour which is wonderfully airy, complete, and efficient.",
-        descriptionNl:
-          "Een traditioneel Nepalees en Indiaas tussendoortje van linzenmeel dat heerlijk luchtig, compleet en efficiënt is.",
-        price: 2.5,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "01",
+        "name": "Pappadums",
+        "description": "Traditional crisp lentil wafers, light and delicately seasoned.",
+        "descriptionNl": "Traditionele krokante linzenwafels, licht en subtiel gekruid.",
+        "price": 2.75,
+        "nameNl": "Pappadums",
+        "allergens": []
       },
       {
-        name: "Mixed Veg Pakora",
-        description:
-          "Deep-fried mixed vegetables in a light, fragrant batter (chickpeas flour) and Jwaano (lovage seeds).",
-        descriptionNl:
-          "Gefrituurde gemengde groenten in een licht, geurig beslag (kikkererwtenmeel) en Jawano (lavaszaad).",
-        price: 8.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
-        image: "/images/food/pakora.jpg",
+        "id": "02",
+        "name": "Mixed Vegetable Pakora",
+        "description": "Seasonal vegetables dipped in a fragrant chickpea-flour batter, fried until crisp and golden.",
+        "descriptionNl": "Seizoensgroenten in een geurig kikkererwtenbeslag, krokant en goudbruin gefrituurd.",
+        "price": 8.95,
+        "nameNl": "Mixed Vegetable Pakora",
+        "allergens": []
       },
       {
-        name: "Samosa",
-        description:
-          "Handmade, succulent and authentically spiced with a potato and pea fillings, wrapped in a deliciously light pastry.",
-        descriptionNl:
-          "Handgemaakt, sappig en authentiek gekruid met een aardappel-erwtenvulling, verpakt in een heerlijk licht gebakje.",
-        price: 7.75,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
-        image: "/images/food/samosa.jpg",
+        "id": "03",
+        "name": "Vegetable Samosa",
+        "description": "Crisp pastry parcels filled with gently spiced potato and peas.",
+        "descriptionNl": "Knapperig deeg gevuld met zacht gekruide aardappel en erwten.",
+        "price": 7.95,
+        "nameNl": "Vegetable Samosa",
+        "allergens": [
+          "gluten"
+        ]
       },
       {
-        name: "Vegetable Spring Roll",
-        description:
-          "A beloved Indo-Chinese street food delight, featuring a crispy exterior wrapped around a juicy, spicy vegetable filling.",
-        descriptionNl:
-          "Een geliefd Indo-Chinees straatvoedselverrukking, met een knapperige buitenkant gewikkeld rond een sappige, pittige groentevulling.",
-        price: 7.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "04",
+        "name": "Vegetable Spring Roll",
+        "nameNl": "Vegetable Spring Roll",
+        "price": 7.95,
+        "description": "Crisp, golden rolls filled with lightly spiced mixed vegetables.",
+        "descriptionNl": "Krokante, goudbruine loempia’s gevuld met licht gekruide groenten.",
+        "allergens": [
+          "gluten"
+        ],
+        "isVegetarian": true
       },
       {
-        name: "Onion Bhaji",
-        description:
-          "Small onion fritters are fried in a light batter made with our unique homemade spice mix.",
-        descriptionNl:
-          "Kleine uienbeignets worden gebakken in een licht beslag, gemaakt met onze unieke huisgemaakte kruidenmix.",
-        price: 7.5,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "05",
+        "name": "Onion Bhaji",
+        "description": "Crisp onion fritters in seasoned chickpea-flour batter.",
+        "descriptionNl": "Krokante uienbeignets in gekruid kikkererwtenbeslag.",
+        "price": 7.5,
+        "nameNl": "Onion Bhaji",
+        "allergens": [],
+        "image": foodPhotos.onionBhaji.src
       },
-    ],
+      {
+        "id": "06",
+        "name": "Chicken Pakora",
+        "description": "Tender chicken fillet in seasoned batter, fried until crisp and golden.",
+        "descriptionNl": "Malse kipfilet in gekruid beslag, krokant en goudbruin gefrituurd.",
+        "price": 8.5,
+        "nameNl": "Chicken Pakora",
+        "allergens": []
+      },
+      {
+        "id": "07",
+        "name": "Chicken Lollipop",
+        "description": "Frenched chicken winglets, delicately seasoned and fried to a crisp, golden finish - an ever-popular favourite.",
+        "descriptionNl": "Kipvleugeltjes op de “lollipop”-manier gesneden, subtiel gekruid en krokant goudbruin gefrituurd - een geliefde klassieker.",
+        "price": 10.95,
+        "nameNl": "Chicken Lollipop",
+        "allergens": [
+          "gluten"
+        ]
+      },
+      {
+        "id": "08",
+        "name": "Prawn Pakora",
+        "description": "King prawns in a light, aromatic batter, fried until crisp.",
+        "descriptionNl": "Koningsgarnalen in een licht, aromatisch beslag, krokant gefrituurd.",
+        "price": 10.95,
+        "nameNl": "Prawn Pakora",
+        "allergens": [
+          "crustaceans"
+        ]
+      },
+      {
+        "id": "09",
+        "name": "Himalayan Sheekh Kabab",
+        "description": "Succulent minced lamb, hand-shaped onto skewers with ginger, garlic and select spices, grilled in the tandoor.",
+        "descriptionNl": "Sappig lamsgehakt aan spies, gekruid met gember, knoflook en geselecteerde specerijen, gegrild in de tandoor.",
+        "price": 10.5,
+        "nameNl": "Himalayan Sheekh Kabab",
+        "allergens": []
+      },
+      {
+        "id": "10",
+        "name": "Chicken Shashlik",
+        "description": "Grilled chicken skewered with peppers and onion, marinated in Himalayan spices and served with chutney.",
+        "descriptionNl": "Gegrilde kip aan spies met paprika en ui, gemarineerd in Himalayakruiden en geserveerd met chutney.",
+        "price": 11.95,
+        "nameNl": "Chicken Shashlik",
+        "allergens": []
+      }
+    ]
   },
   {
-    name: "Appetisers Non-Veg",
-    items: [
+    "id": "soups-salads",
+    "name": "Soups & Salads",
+    "nameNl": "Soepen & salades",
+    "items": [
       {
-        name: "Chicken Lollypop",
-        description:
-          "A chicken winglet is spiced up and deep-fried to create a lollipop appearance.",
-        descriptionNl:
-          "Een kippenvleugeltje wordt gekruid en gefrituurd om het uiterlijk van een lolly te creëren.",
-        price: 9.95,
-        spiceLevel: 1,
+        "id": "11",
+        "name": "Himalayan Lentil Soup",
+        "description": "Red lentils simmered with fresh ginger, garlic, cumin, coriander and Himalayan spices - light, warming and comforting.",
+        "descriptionNl": "Rode linzen zacht gestoofd met verse gember, knoflook, komijn, koriander en Himalayakruiden. Licht, verwarmend en troostrijk.",
+        "price": 8.95,
+        "nameNl": "Himalayan Lentil Soup",
+        "allergens": []
       },
       {
-        name: "Chicken Pakora",
-        description:
-          "Chicken fillet pieces coated in seasoned batter and fried until golden brown.",
-        descriptionNl:
-          "Stukjes kipfilet bedekt met gekruid beslag en goudbruin gebakken.",
-        price: 8.5,
-        spiceLevel: 1,
+        "id": "12",
+        "name": "Himalayan Soup - Chef’s Special",
+        "description": "A medium-spiced blend of lentils and beans, simmered with aromatic herbs and spices.",
+        "descriptionNl": "Een medium pittige mix van linzen en bonen, gestoofd met aromatische kruiden en specerijen.",
+        "price": 9.95,
+        "nameNl": "Himalayan Soup - Chef’s Special",
+        "allergens": []
       },
       {
-        name: "Prawn Pakora",
-        description:
-          "King Tiger Prawns in a light, crispy and aromatic batter.",
-        descriptionNl:
-          "King Tiger Garnalen in een licht, knapperig en aromatisch beslag.",
-        price: 9.95,
-        spiceLevel: 1,
+        "id": "13",
+        "name": "Chicken Soup - Our Special",
+        "description": "A comforting blend of lentils and tender chicken, simmered with aromatic herbs and Himalayan spices.",
+        "descriptionNl": "Een troostrijke mix van linzen en malse kip, gestoofd met aromatische kruiden en Himalayakruiden.",
+        "price": 10.5,
+        "nameNl": "Chicken Soup - Our Special",
+        "allergens": []
       },
       {
-        name: "Himalayan Sheekh Kabab",
-        description:
-          "Succulent barbecued minced Irish lamb kabab flavoured with garlic, ginger, and selected spices and barbecued in a tandoori oven.",
-        descriptionNl:
-          "Sappige, gegrilde Ierse lamskabab, op smaak gebracht met knoflook, gember en geselecteerde kruiden, geroosterd in een tandoori-oven.",
-        price: 9.95,
-        spiceLevel: 2,
-        isPopular: true,
+        "id": "14",
+        "name": "Tandoori Chicken Salad",
+        "description": "Fresh lettuce, spring onion, coriander, peppers, red onion, carrot, edamame and corn, topped with grilled tandoori chicken and house dressing.",
+        "descriptionNl": "Verse sla, lente-ui, koriander, paprika, rode ui, wortel, edamame en maïs, getopt met gegrilde tandoorikip en huisdressing.",
+        "price": 14.95,
+        "nameNl": "Tandoori Chicken Salad",
+        "allergens": [
+          "soybeans",
+          "milk"
+        ]
       },
-    ],
+      {
+        "id": "15",
+        "name": "Himalayan Garden Salad",
+        "description": "A colourful vegetarian salad of lettuce, lemon, spring onion, coriander, peppers, red onion, carrot, edamame and corn.",
+        "descriptionNl": "Een kleurrijke vegetarische salade met sla, citroen, lente-ui, koriander, paprika, rode ui, wortel, edamame en maïs.",
+        "price": 12.95,
+        "nameNl": "Himalayan Garden Salad",
+        "allergens": [
+          "soybeans"
+        ],
+        "isVegetarian": true
+      }
+    ]
   },
   {
-    name: "Soups",
-    items: [
+    "id": "nepalese-specialities",
+    "name": "Nepalese Specialities",
+    "nameNl": "Nepalese specialiteiten",
+    "items": [
       {
-        name: "Nepalese Daal Soup",
-        description:
-          "Savour the warmth of Nepalese Daal Soup, a hearty blend of lentils and spices that embodies Himalayan comfort.",
-        descriptionNl:
-          "Proef de warmte van Nepalese Daalsoep, een stevige mix van linzen en kruiden die het comfort van de Himalaya belichaamt.",
-        price: 8.5,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "16",
+        "name": "Himalayan Daal Bhaat Set",
+        "description": "A typical Nepali everyday dish served with lentils, seasonal vegetable curry, raita, and homemade pickle as the basics. DAAL BHAT POWER 24 HOURS.",
+        "descriptionNl": "Een typisch Nepalees alledaags gerecht geserveerd met linzen, seizoensgroentencurry, raita en zelfgemaakte augurk als basis.",
+        "price": 22.95,
+        "variants": [
+          {
+            "label": "Veg",
+            "labelNl": "Vegetarisch",
+            "price": 22.95
+          },
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 25.95
+          },
+          {
+            "label": "Lamb",
+            "labelNl": "Lamsvlees",
+            "price": 27.95
+          }
+        ],
+        "nameNl": "Himalayan Daal Bhaat Set",
+        "allergens": [
+          "milk"
+        ],
+        "image": foodPhotos.daalBhaat.src
       },
       {
-        name: "Himalayan Soup",
-        description:
-          "Medium-spiced soup made from a mixture of lentils and beans. Chef's specialty.",
-        descriptionNl:
-          "Medium gekruide soep gemaakt van een mengsel van linzen en bonen.",
-        price: 9.5,
-        spiceLevel: 2,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "17",
+        "name": "Himalayan Fried Rice",
+        "description": "Nepali-style basmati rice, wok-fried with vegetables and aromatic spices.",
+        "descriptionNl": "Nepalese gebakken basmatirijst met groenten en aromatische kruiden.",
+        "price": 18.95,
+        "variants": [
+          {
+            "label": "Veg",
+            "labelNl": "Vegetarisch",
+            "price": 18.95
+          },
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 19.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 22.95
+          }
+        ],
+        "nameNl": "Himalayan Fried Rice",
+        "allergens": [
+          "soybeans"
+        ],
+        "image": foodPhotos.friedRice.src
       },
-    ],
+      {
+        "id": "18",
+        "name": "Lamb Sekuwa",
+        "description": "Tender lamb marinated with cumin, coriander, ginger and garlic, grilled for a smoky finish; served with basmati rice and vegetable curry.",
+        "descriptionNl": "Mals lamsvlees gemarineerd met komijn, koriander, gember en knoflook, rokerig gegrild; geserveerd met basmatirijst en groentecurry.",
+        "price": 24.95,
+        "nameNl": "Lamb Sekuwa",
+        "allergens": []
+      }
+    ]
   },
   {
-    name: "Himalayan Specialties",
-    items: [
+    "id": "momo-noodles",
+    "name": "Himalayan Momo & Noodles Specials",
+    "nameNl": "Momo & noedelspecialiteiten",
+    "items": [
       {
-        name: "Himalayan Mo:Mo: (10pcs)",
-        description:
-          "One of the most popular homemade dumplings, mildly spiced with onions, ginger, garlic, and spices, and served with homemade sesame seed and cherry tomato sauce. Regarded as the 7x best dumpling in Amsterdam by Het Parool.",
-        descriptionNl:
-          "Een van de meest populaire zelfgemaakt dumplings is mild gekruid met uien, gember, knoflook en kruiden. Geserveerd met huisgemaakte saus (sesamzaad en kerstomaatjes). Het wordt door Het Parool beschouwd als de 7x beste dumplings in Amsterdam.",
-        price: 15.95,
-        variants: [
-          { label: "Vegan Steamed", price: 15.95 },
-          { label: "Chicken Steamed", price: 17.95 },
-          { label: "Vegan Chilly", price: 17.95 },
-          { label: "Chicken Chilly", price: 19.95 },
+        "id": "19",
+        "name": "Vegan Steamed Momo",
+        "description": "Handmade Nepali dumplings with a savoury vegetable filling, served with house sesame-tomato achar.",
+        "descriptionNl": "Handgemaakte Nepalese dumplings met een hartige groentevulling, geserveerd met huisgemaakte sesam-tomatenachar.",
+        "price": 16.95,
+        "nameNl": "Vegan Steamed Momo",
+        "allergens": [
+          "gluten",
+          "sesame"
         ],
-        spiceLevel: 1,
-        isPopular: true,
-        image: "/images/food/momo.jpg",
+        "isVegan": true
       },
       {
-        name: "Himalayan Daal-Bhaat (Thali)",
-        description:
-          "A typical Nepali everyday dish served with lentils, seasonal vegetable curry, raita, and homemade pickle as the basics.",
-        descriptionNl:
-          "Een typisch Nepalees alledaags gerecht geserveerd met linzen, seizoensgroentencurry, raita en zelfgemaakte augurk als basis.",
-        price: 22.95,
-        variants: [
-          { label: "Veg", price: 22.95 },
-          { label: "Chicken", price: 23.95 },
-          { label: "Lamb/Fish", price: 24.95 },
+        "id": "20",
+        "name": "Chicken Steamed Momo",
+        "description": "Handmade dumplings filled with mildly spiced chicken, onion, ginger and garlic, served with sesame-tomato achar.",
+        "descriptionNl": "Handgemaakte dumplings gevuld met licht gekruide kip, ui, gember en knoflook, geserveerd met sesam-tomatenachar.",
+        "price": 18.95,
+        "nameNl": "Chicken Steamed Momo",
+        "allergens": [
+          "gluten",
+          "sesame"
+        ]
+      },
+      {
+        "id": "21",
+        "name": "Vegan Kothey Momo (Pan-Fried)",
+        "description": "Steamed dumplings pan-seared to a crisp golden base, served with homemade achar.",
+        "descriptionNl": "Gestoomde dumplings in de pan gebakken voor een krokante gouden bodem, geserveerd met huisgemaakte achar.",
+        "price": 17.75,
+        "nameNl": "Vegan Kothey Momo (Pan-Fried)",
+        "allergens": [
+          "gluten",
+          "sesame"
         ],
-        spiceLevel: 1,
-        isPopular: true,
-        image: "/images/food/daal-bhaat.jpg",
+        "isVegan": true
       },
       {
-        name: "Thukpa",
-        description:
-          "Savour the warmth of the Himalayas with our Thukpa, a nourishing noodle soup enriched with a flavorful broth, fresh vegetables, and aromatic spices. The perfect blend of comfort and tradition in every spoonful.",
-        descriptionNl:
-          "Geniet van de warmte van de Himalaya met onze Thukpa, een voedzame noedelsoep verrijkt met een smaakvolle bouillon, verse groenten en aromatische kruiden. Het is de perfecte mix van comfort en traditie in elke lepel.",
-        price: 17.95,
-        variants: [
-          { label: "Veg", price: 17.95 },
-          { label: "Chicken", price: 18.95 },
-          { label: "Lamb or Prawn", price: 20.95 },
-          { label: "Mixed", price: 21.95 },
+        "id": "22",
+        "name": "Chicken Kothey Momo (Pan-Fried)",
+        "description": "Chicken momo pan-seared until golden underneath, while remaining soft and juicy above.",
+        "descriptionNl": "Kipmomo in de pan gebakken met een goudbruine bodem, zacht en sappig van boven.",
+        "price": 18.75,
+        "nameNl": "Chicken Kothey Momo (Pan-Fried)",
+        "allergens": [
+          "gluten"
+        ]
+      },
+      {
+        "id": "23",
+        "name": "Vegan Chilli Momo",
+        "description": "Momo wok-tossed with peppers, onion, garlic, chilli and a tangy house sauce.",
+        "descriptionNl": "Momo uit de wok met paprika, ui, knoflook, chili en een pittig-frisse huissaus.",
+        "price": 18.95,
+        "nameNl": "Vegan Chilli Momo",
+        "allergens": [
+          "gluten",
+          "soybeans"
         ],
-        spiceLevel: 1,
+        "isVegan": true
       },
       {
-        name: "Fried Rice",
-        description:
-          "A very popular dish in Nepal & India, prepared with Nepali stir-fried rice with vegetables and spices.",
-        descriptionNl:
-          "Een zeer populair gerecht in Nepal & India, bereid met Nepalese roergebakken rijst met groenten en kruiden.",
-        price: 17.95,
-        variants: [
-          { label: "Veg", price: 17.95 },
-          { label: "Chicken", price: 18.95 },
-          { label: "Lamb or Prawn", price: 20.95 },
+        "id": "24",
+        "name": "Chicken Chilli Momo",
+        "description": "Chicken momo wok-tossed with peppers, onion, garlic, chilli and house sauce.",
+        "descriptionNl": "Kipmomo uit de wok met paprika, ui, knoflook, chili en huissaus.",
+        "price": 19.95,
+        "nameNl": "Chicken Chilli Momo",
+        "allergens": [
+          "gluten",
+          "soybeans"
+        ]
+      },
+      {
+        "id": "25",
+        "name": "Jhol Momo - Chicken or Vegan",
+        "description": "Steamed momo served in a warm, aromatic sesame-based Nepali jhol broth with fresh herbs.",
+        "descriptionNl": "Gestoomde momo in een warme, aromatische Nepalese sesam-jhol met verse kruiden.",
+        "price": 18.95,
+        "nameNl": "Jhol Momo - Chicken or Vegan",
+        "allergens": [
+          "gluten",
+          "sesame"
+        ]
+      },
+      {
+        "id": "26",
+        "name": "Thukpa",
+        "description": "Traditional Himalayan noodle soup with vegetables, aromatic spices and your choice of protein.",
+        "descriptionNl": "Traditionele Himalaya-noedelsoep met groenten, aromatische kruiden en een keuze uit verschillende varianten.",
+        "price": 18.95,
+        "variants": [
+          {
+            "label": "Veg",
+            "labelNl": "Vegetarisch",
+            "price": 18.95
+          },
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 19.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 21.95
+          },
+          {
+            "label": "Mixed",
+            "labelNl": "Gemengd",
+            "price": 23.95
+          }
         ],
-        spiceLevel: 1,
+        "nameNl": "Thukpa",
+        "allergens": [
+          "gluten",
+          "crustaceans"
+        ]
       },
       {
-        name: "Chow Mein",
-        description:
-          "This must-try, vibrant, and flavorful stir-fried noodle dish captures the essence of Nepalese cuisine with perfectly cooked noodles, a medley of fresh vegetables, traditional spices like turmeric and cumin, all garnished with fresh coriander and a squeeze of lemon.",
-        descriptionNl:
-          "Dit levendige en smaakvolle geroerbakte noedelgerecht dat je moet proberen, vangt de essentie van de Nepalese keuken met perfect gekookte noedels, een mengeling van verse groenten, traditionele kruiden zoals kurkuma en komijn, allemaal gegarneerd met verse koriander en een scheutje citroen.",
-        price: 17.95,
-        variants: [
-          { label: "Veg", price: 17.95 },
-          { label: "Chicken", price: 18.95 },
-          { label: "Lamb or Prawn", price: 20.95 },
+        "id": "27",
+        "name": "Chow Mein",
+        "description": "Nepali-style wok-fried noodles with fresh vegetables, herbs and house seasoning.",
+        "descriptionNl": "Nepalese woknoedels met verse groenten, kruiden en huisgemaakte smaakmakers.",
+        "price": 18.95,
+        "variants": [
+          {
+            "label": "Veg",
+            "labelNl": "Vegetarisch",
+            "price": 18.95
+          },
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 19.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 21.95
+          },
+          {
+            "label": "Mixed",
+            "labelNl": "Gemengd",
+            "price": 22.95
+          }
         ],
-        spiceLevel: 1,
-        image: "/images/food/chow-mein.jpg",
-      },
-      {
-        name: "Lamb Sekuwa (Dry)",
-        description:
-          "This must-have succulent Nepalese grilled dish features tender mutton pieces marinated in traditional spices such as cumin, coriander, garlic, and ginger, a sprinkle of lemon juice for a rich, smoky flavour experience, and accompanied by Basmati rice and vegetable curry.",
-        descriptionNl:
-          "Dit onmisbare, sappige Nepalese gegrilde gerecht bestaat uit malse stukken schapenvlees gemarineerd in traditionele kruiden zoals komijn, koriander, knoflook en gember, een scheutje citroensap voor een rijke, rokerige smaakervaring, en vergezeld van basmatirijst en groentecurry.",
-        price: 22.95,
-        spiceLevel: 2,
-      },
-    ],
+        "nameNl": "Chow Mein",
+        "allergens": [
+          "gluten",
+          "crustaceans",
+          "soybeans"
+        ]
+      }
+    ]
   },
   {
-    name: "All Time Favorites",
-    note: "All curry dishes come with boiled Basmati rice. An option to upgrade to Pilau rice is available for an additional charge of €4.50.",
-    noteNl:
-      "Bij alle currygerechten wordt gekookte basmatirijst geserveerd. Een optie om te upgraden naar Pilau-rijst is beschikbaar tegen een meerprijs van €4,50.",
-    items: [
+    "id": "curry-classics",
+    "name": "Curry Classics",
+    "nameNl": "Curryklassiekers",
+    "items": [
       {
-        name: "Tikka Masala",
-        description:
-          "A dish consists of marinated and charred meat simmered in a creamy, tomato-based sauce infused with Garam Masala, a blend of cinnamon, black pepper, coriander, cumin, and cardamom.",
-        descriptionNl:
-          "Een gerecht bestaat uit gemarineerd en verkoold vlees gestoofd in een romige saus op basis van tomaten doordrenkt met Garam Masala, een mengsel van kaneel, zwarte peper, koriander, komijn en kardemom.",
-        price: 20.95,
-        variants: [
-          { label: "Chicken or Fish", price: 20.95 },
-          { label: "Lamb or Prawn", price: 23.95 },
+        "id": "28",
+        "name": "Tikka Masala",
+        "description": "Marinated, grilled chicken in a creamy tomato sauce enriched with garam masala and aromatic spices.",
+        "descriptionNl": "Gemarineerde, gegrilde kip in een romige tomatensaus met garam masala en aromatische specerijen.",
+        "price": 21.95,
+        "variants": [
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 21.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 24.95
+          }
         ],
-        spiceLevel: 1,
-        isPopular: true,
+        "nameNl": "Tikka Masala",
+        "allergens": [
+          "crustaceans",
+          "milk"
+        ]
       },
       {
-        name: "Jhal Frezi",
-        description:
-          "Fairly hot and sour stir fry of tender meat with onions, tomatoes, green chillies, fresh ginger and garlic, pepper and coriander.",
-        descriptionNl:
-          "Redelijk heet en zuur roerbakgerecht van mals vlees met uien, tomaten, groene pepers, verse gember en knoflook, peper en koriander.",
-        price: 20.95,
-        variants: [
-          { label: "Chicken or Fish", price: 20.95 },
-          { label: "Lamb or Prawn", price: 23.95 },
+        "id": "29",
+        "name": "Jalfrezi",
+        "description": "A lively, fairly hot stir-fried curry with onion, tomato, peppers, green chilli, ginger, garlic and coriander.",
+        "descriptionNl": "Een levendige, vrij pittige curry met ui, tomaat, paprika, groene chili, gember, knoflook en koriander.",
+        "price": 21.95,
+        "variants": [
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 21.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 24.95
+          }
         ],
-        spiceLevel: 3,
+        "nameNl": "Jalfrezi",
+        "allergens": [
+          "crustaceans"
+        ]
       },
       {
-        name: "Korma",
-        description:
-          "A delicately spiced and creamy blend of coconut, cashew nuts, raisins, ground almonds, and aromatic spices. It is very mild with a hint of sweetness.",
-        descriptionNl:
-          "Een delicaat romige mix van kokosnoot, cashewnoten, rozijnen, gemalen amandelen en aromatische kruiden. Het is zeer mild met een vleugje zoetheid.",
-        price: 22.95,
-        variants: [
-          { label: "Chicken", price: 22.95 },
-          { label: "Lamb or Prawn", price: 24.95 },
+        "id": "30",
+        "name": "Korma",
+        "description": "A mild and creamy curry with coconut, cashew, almond, raisins and aromatic spices.",
+        "descriptionNl": "Een milde, romige curry met kokos, cashew, amandel, rozijnen en aromatische kruiden.",
+        "price": 22.95,
+        "variants": [
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 22.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 25.95
+          }
         ],
-        spiceLevel: 1,
+        "nameNl": "Korma",
+        "allergens": [
+          "crustaceans",
+          "milk",
+          "nuts"
+        ]
       },
       {
-        name: "Rogan Josh",
-        description:
-          "A vibrant red curry infused with a blend of aromatic spices including cloves, cinnamon, cardamom, and fennel, enhanced by the tangy heat of garlic, ginger, and creamy yoghurt.",
-        descriptionNl:
-          "Een levendige rode curry doordrenkt met een mix van aromatische kruiden, waaronder kruidnagel, kaneel, kardemom en venkel, versterkt door de pittige hitte van knoflook, gember en romige yoghurt.",
-        price: 21.95,
-        variants: [
-          { label: "Chicken", price: 21.95 },
-          { label: "Lamb or Prawn", price: 23.95 },
+        "id": "31",
+        "name": "Rogan Josh",
+        "description": "A rich, aromatic curry with cloves, cinnamon, cardamom, fennel, ginger, garlic and yoghurt.",
+        "descriptionNl": "Een rijke, aromatische curry met kruidnagel, kaneel, kardemom, venkel, gember, knoflook en yoghurt.",
+        "price": 21.95,
+        "variants": [
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 21.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 24.95
+          }
         ],
-        spiceLevel: 2,
+        "nameNl": "Rogan Josh",
+        "allergens": [
+          "crustaceans",
+          "milk"
+        ]
       },
       {
-        name: "Vindaloo",
-        description:
-          "A rich, hot and peppery curry, strongly spiced with lemon and many chillies.",
-        descriptionNl:
-          "Een rijke, hete en peperige curry, sterk gekruid met citroen en veel pepers.",
-        price: 20.95,
-        variants: [
-          { label: "Chicken or Fish", price: 20.95 },
-          { label: "Lamb or Prawn", price: 23.95 },
+        "id": "32",
+        "name": "Vindaloo",
+        "description": "A bold, fiery Goan-style curry with chilli, garlic, warming spices and a bright, tangy finish.",
+        "descriptionNl": "Een krachtige, hete curry op Goa-wijze met chili, knoflook, verwarmende specerijen en een frisse, lichtzure afdronk.",
+        "price": 21.95,
+        "variants": [
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 21.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 24.95
+          }
         ],
-        spiceLevel: 4,
+        "nameNl": "Vindaloo",
+        "allergens": [
+          "crustaceans"
+        ]
       },
       {
-        name: "Madras",
-        description:
-          "Our Madras curry features a fairly hot, dark green sauce derived from green chilies, paprika, and mint, complemented by slight tangy notes from tamarind.",
-        descriptionNl:
-          "Onze Madras-curry bevat een redelijk hete, donkergroene saus afgeleid van groene pepers, paprika en munt, aangevuld met lichte pittige tonen van tamarinde.",
-        price: 21.95,
-        variants: [
-          { label: "Chicken or Fish", price: 21.95 },
-          { label: "Lamb or Prawn", price: 23.95 },
+        "id": "33",
+        "name": "Madras",
+        "description": "A fairly hot South Indian-style curry with chilli, paprika and a subtle tang of tamarind.",
+        "descriptionNl": "Een vrij pittige zuid-Indiase curry met chili, paprika en een subtiele toets van tamarinde.",
+        "price": 21.95,
+        "variants": [
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 21.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 24.95
+          }
         ],
-        spiceLevel: 3,
-      },
-    ],
+        "nameNl": "Madras",
+        "allergens": [
+          "crustaceans"
+        ]
+      }
+    ]
   },
   {
-    name: "Chef's Specialties",
-    items: [
+    "id": "chefs-signature-curries",
+    "name": "Chef’s Signature Curries",
+    "nameNl": "Signature curry’s",
+    "items": [
       {
-        name: "Gorkha Curry",
-        description:
-          "A typical Nepalese curry is made with a harmonious blend of tender meat or vegetables, slow-cooked in a thick, aromatic sauce enriched with a carefully selected mix of Nepali herbs and spices, including fenugreek, turmeric, cumin, and coriander.",
-        descriptionNl:
-          "Een typisch Nepalese curry wordt gemaakt met een harmonieuze mix van mals vlees of groenten, langzaam gegaard in een dikke, aromatische saus verrijkt met een zorgvuldig geselecteerde mix van Nepalese kruiden en specerijen, waaronder fenegriek, kurkuma, komijn en koriander.",
-        price: 21.95,
-        variants: [
-          { label: "Chicken or Fish", price: 21.95 },
-          { label: "Lamb or Prawn", price: 23.95 },
+        "id": "34",
+        "name": "Gorkha Curry",
+        "description": "A Nepali-style curry, slow-cooked in a thick aromatic sauce with fenugreek, turmeric, cumin and coriander.",
+        "descriptionNl": "Nepalese curry, langzaam gegaard in een dikke aromatische saus met fenegriek, kurkuma, komijn en koriander.",
+        "price": 21.95,
+        "variants": [
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 21.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 24.95
+          }
         ],
-        spiceLevel: 2,
-        isPopular: true,
-        image: "/images/food/gorkha-curry.jpg",
-      },
-      {
-        name: "Butter Chicken",
-        description:
-          "A dish featuring an aromatic butter-based sauce with tomatoes, cream, and a blend of spices. It is typically mild but can be adjusted to be as spicy as you prefer.",
-        descriptionNl:
-          "Een gerecht met een aromatische saus op boterbasis met tomaten, room en een mix van kruiden. Het is meestal mild, maar kan worden aangepast om zo pittig te zijn als je wilt.",
-        price: 23.95,
-        spiceLevel: 1,
-        isPopular: true,
-        image: "/images/food/butter-chicken.jpg",
-      },
-      {
-        name: "Sarabi (Hot & Sweet)",
-        description:
-          "A creamy dish delicately seasoned with spices, cooked in coconut sauce, enhanced with cashew nut powder, green chilli, and Tia Maria.",
-        descriptionNl:
-          "Een romig gerecht, subtiel gekruid met kruiden, gekookt in kokossaus, aangevuld met cashewnootpoeder, groene chili en Tia Maria.",
-        price: 22.95,
-        variants: [
-          { label: "Chicken", price: 22.95 },
-          { label: "Lamb or Prawn", price: 24.95 },
+        "nameNl": "Gorkha Curry",
+        "allergens": [
+          "crustaceans"
         ],
-        spiceLevel: 2,
+        "image": foodPhotos.gorkhaChickenCurry.src
       },
       {
-        name: "Saag Tarkari",
-        description:
-          "Fresh spinach sautéed with ripe tomatoes, fenugreek leaves, fresh ginger, and garlic, all infused with Himalayan herbs.",
-        descriptionNl:
-          "Verse spinazie gebakken met rijpe tomaten, fenegriekbladeren, verse gember en knoflook, allemaal doordrenkt met Himalaya-kruiden.",
-        price: 21.95,
-        variants: [
-          { label: "Chicken", price: 21.95 },
-          { label: "Lamb or Prawn", price: 24.95 },
+        "id": "35",
+        "name": "Butter Chicken",
+        "description": "Tandoori chicken in a silky tomato-butter sauce, finished with cream and gentle spices.",
+        "descriptionNl": "Tandoorikip in een zijdezachte tomaten-botersaus, afgewerkt met room en milde specerijen.",
+        "price": 25.95,
+        "nameNl": "Butter Chicken",
+        "allergens": [],
+        "image": foodPhotos.butterChicken.src
+      },
+      {
+        "id": "36",
+        "name": "Sarabi - Hot & Sweet",
+        "description": "A creamy coconut curry with cashew, green chilli and a distinctive sweet-spiced finish.",
+        "descriptionNl": "Romige kokoscurry met cashew, groene chili en een karakteristieke zoet-kruidige afdronk.",
+        "price": 23.95,
+        "variants": [
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 23.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 25.95
+          }
         ],
-        spiceLevel: 1,
-        image: "/images/food/saag-tarkari.jpg",
+        "nameNl": "Sarabi - Hot & Sweet",
+        "allergens": [
+          "nuts"
+        ]
       },
       {
-        name: "Nepali Biryani",
-        description:
-          "Savour the essence of tradition with our Biryani, a fragrant blend of basmati rice, spices, and tender marinated meat or vegetables, slow-cooked to perfection. Each serving comes with a cooling raita, offering a harmonious culinary experience.",
-        descriptionNl:
-          "Proef de essentie van traditie met onze Biryani, een geurige mix van basmatirijst, kruiden en mals gemarineerd vlees of groenten, langzaam gekookt tot in de perfectie. Elke portie wordt geleverd met een verkoelende raita, wat een harmonieuze culinaire ervaring biedt.",
-        price: 20.95,
-        variants: [
-          { label: "Veg or Chicken", price: 20.95 },
-          { label: "Lamb or Prawn", price: 23.95 },
-          { label: "Mixed", price: 26.95 },
+        "id": "37",
+        "name": "Saag Tarkari",
+        "description": "Fresh spinach cooked with tomato, fenugreek, ginger, garlic and Himalayan herbs.",
+        "descriptionNl": "Verse spinazie bereid met tomaat, fenegriek, gember, knoflook en Himalayakruiden.",
+        "price": 22.95,
+        "variants": [
+          {
+            "label": "Chicken",
+            "labelNl": "Kip",
+            "price": 22.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 24.95
+          }
         ],
-        spiceLevel: 2,
-        isPopular: true,
+        "nameNl": "Saag Tarkari",
+        "allergens": []
       },
       {
-        name: "Chicken Chilly",
-        description:
-          "Experience the bold flavours of Nepal with our Chicken Chilly, featuring stir-fried tender chicken, crisp bell peppers, and fiery green chillies, all seasoned with authentic Nepali spices. A perfect blend of heat and taste, this dish is a delight for spice enthusiasts.",
-        descriptionNl:
-          "Ervaar de gedurfde smaken van Nepal met onze Chicken Chilly, met roergebakken malse kip, knapperige paprika en vurige groene pepers, allemaal gekruid met authentieke Nepalese kruiden. Een perfecte mix van warmte en smaak, dit gerecht is een genot voor kruidenliefhebbers.",
-        price: 21.95,
-        spiceLevel: 3,
-        image: "/images/food/chicken-chilly.jpg",
+        "id": "38",
+        "name": "Chicken Chilli",
+        "description": "Tender chicken stir-fried with peppers, onion, green chilli and bold Nepali seasoning.",
+        "descriptionNl": "Malse kip geroerbakt met paprika, ui, groene chili en krachtige Nepalese kruiden.",
+        "price": 22.95,
+        "nameNl": "Chicken Chilli",
+        "allergens": [
+          "soybeans"
+        ]
       },
       {
-        name: "Paneer Chilly",
-        description:
-          "Indulge in the rich flavours of Nepal with our Paneer Chilly, featuring stir-fried homemade cottage cheese, crisp bell peppers, and spicy green chillies, seasoned with authentic Nepali spices. A perfect fusion of heat and taste for spice lovers.",
-        descriptionNl:
-          "Geniet van de rijke smaken van Nepal met onze Paneer Chilly, met roergebakken zelfgemaakte kwark, knapperige paprika en pittige groene pepers, gekruid met authentieke Nepalese kruiden. Een perfecte mix van warmte en smaak voor kruidenliefhebbers.",
-        price: 22.95,
-        spiceLevel: 3,
-        isVegetarian: true,
+        "id": "39",
+        "name": "Paneer Chilli",
+        "nameNl": "Paneer Chilli",
+        "price": 22.95,
+        "description": "Homemade paneer stir-fried with peppers, onion, green chilli and bold Nepali seasoning.",
+        "descriptionNl": "Huisgemaakte paneer geroerbakt met paprika, ui, groene chili en krachtige Nepalese kruiden.",
+        "allergens": [
+          "soybeans",
+          "milk"
+        ],
+        "isVegetarian": true,
+        "image": foodPhotos.paneerChilli.src
       },
-    ],
+      {
+        "id": "40",
+        "name": "Salmon Curry - Signature Dish",
+        "description": "Pan-seared salmon fillet in a rich, aromatic coconut curry sauce with red onion and fresh chilli, finished with fragrant herbs and a wedge of lime.",
+        "descriptionNl": "Gebakken zalmfilet in een rijke, aromatische kokoscurrysaus met rode ui en verse chili, afgewerkt met geurige kruiden en een schijfje limoen.",
+        "price": 25.95,
+        "nameNl": "Salmon Curry - Signature Dish",
+        "allergens": [
+          "fish"
+        ]
+      }
+    ]
   },
   {
-    name: "Tandoori Dishes",
-    note: "All our Tandoori chicken, lamb, and fish dishes are prepared using fillets and are served alongside Basmati rice and vegetable curry.",
-    noteNl:
-      "Al onze Tandoori kip-, lams- en visgerechten worden bereid met filets en geserveerd met basmatirijst en groentecurry.",
-    items: [
+    "id": "biryani-rice",
+    "name": "Biryani & Rice",
+    "nameNl": "Biryani & rijst",
+    "items": [
       {
-        name: "Chicken Tikka",
-        description:
-          "Chicken tikka prepared using fillets, served alongside Basmati rice and vegetable curry.",
-        price: 23.95,
-        spiceLevel: 2,
-        image: "/images/food/tandoori-dish.jpg",
+        "id": "41",
+        "name": "Nepali Biryani",
+        "description": "Fragrant basmati rice layered with aromatic spices and marinated vegetables or meat, served with cooling raita.",
+        "descriptionNl": "Geurige basmatirijst met aromatische kruiden en gemarineerde groenten of vlees, geserveerd met verkoelende raita.",
+        "price": 21.95,
+        "variants": [
+          {
+            "label": "Veg/Chicken",
+            "labelNl": "Vegetarisch/kip",
+            "price": 21.95
+          },
+          {
+            "label": "Lamb/Prawn",
+            "labelNl": "Lamsvlees/garnalen",
+            "price": 24.95
+          },
+          {
+            "label": "Mixed",
+            "labelNl": "Gemengd",
+            "price": 27.95
+          }
+        ],
+        "nameNl": "Nepali Biryani",
+        "allergens": [
+          "crustaceans",
+          "milk",
+          "nuts"
+        ]
       },
       {
-        name: "Lamb Tikka Tandoori",
-        description:
-          "Lamb tikka prepared using fillets, served alongside Basmati rice and vegetable curry.",
-        price: 26.95,
-        spiceLevel: 2,
+        "id": "42",
+        "name": "Basmati Rice",
+        "description": "Steamed long-grain basmati rice.",
+        "descriptionNl": "Gestoomde langkorrelige basmatirijst.",
+        "price": 5.0,
+        "nameNl": "Basmati Rice",
+        "allergens": []
       },
       {
-        name: "Paneer Tikka Tandoori",
-        description:
-          "Paneer tikka prepared using fillets, served alongside Basmati rice and vegetable curry.",
-        price: 23.95,
-        spiceLevel: 2,
-        isVegetarian: true,
-      },
-    ],
+        "id": "43",
+        "name": "Jeera Rice",
+        "description": "Basmati rice gently sautéed with cumin seeds and butter.",
+        "descriptionNl": "Basmatirijst zacht gebakken met komijnzaad en boter.",
+        "price": 6.45,
+        "nameNl": "Jeera Rice",
+        "allergens": [
+          "milk"
+        ]
+      }
+    ]
   },
   {
-    name: "Tandoori Bread",
-    note: "All the naan breads are freshly baked one by one in a tandoori clay oven.",
-    noteNl:
-      "Alle naanbroodjes worden één voor één vers gebakken in een tandoori-kleioven.",
-    items: [
+    "id": "tandoori",
+    "name": "Tandoori - From the Clay Oven",
+    "nameNl": "Uit de tandoor",
+    "items": [
       {
-        name: "Plain Naan",
-        description: "Freshly baked plain naan bread from the tandoori clay oven.",
-        price: 3.5,
-        spiceLevel: 1,
-        isVegetarian: true,
+        "id": "44",
+        "name": "Tandoori Chicken",
+        "description": "Chicken on the bone, marinated in yoghurt and Himalayan spices and grilled in the tandoor.",
+        "descriptionNl": "Kip aan het bot, gemarineerd in yoghurt en Himalayakruiden en gegrild in de tandoor.",
+        "price": 22.95,
+        "nameNl": "Tandoori Chicken",
+        "allergens": [
+          "milk"
+        ]
       },
       {
-        name: "Butter Naan",
-        description: "Freshly baked butter naan bread from the tandoori clay oven.",
-        price: 3.75,
-        spiceLevel: 1,
-        isVegetarian: true,
+        "id": "45",
+        "name": "Chicken Tikka Tandoori",
+        "description": "Marinated chicken fillet grilled in the tandoor.",
+        "descriptionNl": "Gemarineerde kipfilet uit de tandoor.",
+        "price": 24.95,
+        "nameNl": "Chicken Tikka Tandoori",
+        "allergens": [
+          "milk"
+        ]
       },
       {
-        name: "Garlic Naan",
-        description: "Freshly baked garlic naan bread from the tandoori clay oven.",
-        price: 3.95,
-        spiceLevel: 1,
-        isVegetarian: true,
+        "id": "46",
+        "name": "Lamb Tikka Tandoori",
+        "description": "Tender marinated lamb grilled in the tandoor.",
+        "descriptionNl": "Mals gemarineerd lamsvlees uit de tandoor.",
+        "price": 27.95,
+        "nameNl": "Lamb Tikka Tandoori",
+        "allergens": [
+          "milk"
+        ]
       },
       {
-        name: "Cheese Naan",
-        description: "Freshly baked cheese naan bread from the tandoori clay oven.",
-        price: 4.5,
-        spiceLevel: 1,
-        isVegetarian: true,
+        "id": "47",
+        "name": "Paneer Tikka Tandoori",
+        "description": "Paneer marinated with aromatic spices and grilled in the tandoor.",
+        "descriptionNl": "Paneer gemarineerd met aromatische kruiden en gegrild in de tandoor.",
+        "price": 25.95,
+        "nameNl": "Paneer Tikka Tandoori",
+        "allergens": [
+          "milk"
+        ],
+        "isVegetarian": true
       },
       {
-        name: "Cheese & Garlic Naan",
-        description:
-          "Freshly baked cheese and garlic naan bread from the tandoori clay oven.",
-        price: 4.75,
-        spiceLevel: 1,
-        isVegetarian: true,
-      },
-      {
-        name: "Peshwari Naan",
-        description:
-          "Soft and fluffy, it is filled with coconuts, cashew nuts, and raisins, offering a burst of sweetness and texture.",
-        descriptionNl:
-          "Zacht en donzig, gevuld met kokosnoten, cashewnoten en rozijnen, wat een vleugje zoetheid en textuur biedt.",
-        price: 4.75,
-        spiceLevel: 1,
-        isVegetarian: true,
-      },
+        "id": "48",
+        "name": "Mixed Grill Tandoori",
+        "description": "A generous selection of tandoori-grilled chicken and seafood, served sizzling straight from the clay oven.",
+        "descriptionNl": "Een royale selectie tandoori-gegrilde kip en zeevruchten, sissend geserveerd uit de tandoor.",
+        "price": 29.95,
+        "nameNl": "Mixed Grill Tandoori",
+        "allergens": [
+          "crustaceans",
+          "milk"
+        ]
+      }
     ],
+    "note": "All the tandoori dishes are served with basmati rice and vegetable curry.",
+    "noteNl": "Alle tandoori gerechten worden geserveerd met basmatirijst en groentecurry."
   },
   {
-    name: "Vegetarians",
-    items: [
+    "id": "vegetarian-vegan-mains",
+    "name": "Vegetarian & Vegan Mains",
+    "nameNl": "Vegetarisch & vegan",
+    "items": [
       {
-        name: "Vegetable Korma",
-        description:
-          "Mixed vegetables cooked with mild herbs, cream, nuts, coconut, and raisins.",
-        descriptionNl:
-          "Gemengde groenten gekookt met milde kruiden, room, noten, kokos en rozijnen.",
-        price: 19.95,
-        spiceLevel: 1,
-        isVegetarian: true,
+        "id": "49",
+        "name": "Vegetable Korma",
+        "description": "Mixed vegetables in a mild, creamy sauce with coconut, nuts and raisins.",
+        "descriptionNl": "Gemengde groenten in een milde romige saus met kokos, noten en rozijnen.",
+        "price": 20.95,
+        "nameNl": "Vegetable Korma",
+        "allergens": [
+          "nuts"
+        ],
+        "isVegetarian": true
       },
       {
-        name: "Daal Makhani",
-        description:
-          "Indulge in the creamy richness of Daal Makhani, a luxurious blend of black lentils and kidney beans simmered in a buttery, spiced tomato sauce, finished with cream.",
-        descriptionNl:
-          "Geniet van de romige rijkdom van Daal Makhani, een luxe mix van zwarte linzen en bruine bonen gestoofd in een boterachtige, gekruide tomatensaus, afgewerkt met room.",
-        price: 19.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-        image: "/images/food/daal-makhani.jpg",
+        "id": "50",
+        "name": "Daal Makhani",
+        "description": "Black lentils and kidney beans slowly simmered in a buttery spiced tomato sauce, finished with cream.",
+        "descriptionNl": "Zwarte linzen en kidneybonen langzaam gestoofd in een gekruide tomaten-botersaus, afgewerkt met room.",
+        "price": 19.95,
+        "nameNl": "Daal Makhani",
+        "allergens": [
+          "milk"
+        ],
+        "isVegetarian": true
       },
       {
-        name: "Paneer Jhal Frezi",
-        description:
-          "Homemade paneer cooked in chef's secret curry sauce with fresh ginger, garlic, onion, capsicum, tomatoes, chilli and lemon juice.",
-        descriptionNl:
-          "Huisgemaakte paneer gekookt in de geheime currysaus van de chef-kok met verse gember, knoflook, ui, paprika, tomaten, chili en citroensap.",
-        price: 20.95,
-        spiceLevel: 3,
-        isVegetarian: true,
+        "id": "51",
+        "name": "Paneer Jalfrezi",
+        "description": "Paneer stir-fried with ginger, garlic, onion, peppers, tomato, chilli and lemon in a vibrant curry sauce.",
+        "descriptionNl": "Paneer met gember, knoflook, ui, paprika, tomaat, chili en citroen in een levendige currysaus.",
+        "price": 20.95,
+        "nameNl": "Paneer Jalfrezi",
+        "allergens": [
+          "milk"
+        ],
+        "isVegetarian": true
       },
       {
-        name: "Mixed Vegetable Curry",
-        description: "Mixed vegetables cooked with a thick gravy.",
-        descriptionNl: "Gemengde groenten gekookt met een dikke saus.",
-        price: 19.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-        image: "/images/food/vegetable-curry.jpg",
+        "id": "52",
+        "name": "Mixed Vegetable Curry",
+        "description": "Seasonal vegetables cooked in a rich, aromatic curry gravy.",
+        "descriptionNl": "Seizoensgroenten bereid in een rijke, aromatische currysaus.",
+        "price": 19.95,
+        "nameNl": "Mixed Vegetable Curry",
+        "allergens": [],
+        "isVegetarian": true
       },
       {
-        name: "Saag Paneer",
-        description:
-          "Homemade cottage cheese cooked with fresh spinach and herbs.",
-        descriptionNl:
-          "Huisgemaakte Paneer bereid met verse spinazie en kruiden.",
-        price: 20.95,
-        spiceLevel: 1,
-        isVegetarian: true,
+        "id": "53",
+        "name": "Saag Paneer",
+        "description": "Paneer cooked with fresh spinach, herbs and gentle spices.",
+        "descriptionNl": "Paneer bereid met verse spinazie, kruiden en milde specerijen.",
+        "price": 21.45,
+        "nameNl": "Saag Paneer",
+        "allergens": [
+          "milk"
+        ],
+        "isVegetarian": true,
+        "image": foodPhotos.saagPaneer.src
       },
       {
-        name: "Shahi Paneer",
-        description:
-          "Homemade paneer served in a creamy tomato and butter sauce, offering a vegetarian alternative to Butter Chicken.",
-        descriptionNl:
-          "Zelfgemaakte paneer geserveerd in een romige tomaten- en botersaus, een vegetarisch alternatief voor Butter Chicken.",
-        price: 21.95,
-        spiceLevel: 1,
-        isVegetarian: true,
+        "id": "54",
+        "name": "Shahi Paneer",
+        "description": "Paneer in a luxurious, creamy tomato-butter sauce with aromatic spices.",
+        "descriptionNl": "Paneer in een luxe romige tomaten-botersaus met aromatische kruiden.",
+        "price": 22.95,
+        "nameNl": "Shahi Paneer",
+        "allergens": [
+          "milk"
+        ],
+        "isVegetarian": true
       },
       {
-        name: "Aloo Mattar",
-        description:
-          "Potatoes and green peas cooked in a special thick Himalayan gravy.",
-        descriptionNl:
-          "Aardappelen en groene erwten gekookt in een speciale dikke Himalaya-saus.",
-        price: 18.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "55",
+        "name": "Aloo Mattar",
+        "description": "Potatoes and green peas cooked in a thick Himalayan-style curry sauce.",
+        "descriptionNl": "Aardappelen en groene erwten in een dikke curry op Himalaya-wijze.",
+        "price": 18.95,
+        "nameNl": "Aloo Mattar",
+        "allergens": [],
+        "isVegetarian": true
       },
       {
-        name: "Bhindi Bhaaji",
-        description:
-          "Fresh lady's finger in medium hot with onion and fresh tomato.",
-        descriptionNl:
-          "Verse okra in medium heet met ui en verse tomaat.",
-        price: 19.5,
-        spiceLevel: 2,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "56",
+        "name": "Bhindi Bhaji",
+        "description": "Fresh okra cooked with onion, tomato and medium-hot spices.",
+        "descriptionNl": "Verse okra bereid met ui, tomaat en medium pittige kruiden.",
+        "price": 19.95,
+        "nameNl": "Bhindi Bhaji",
+        "allergens": [],
+        "isVegetarian": true,
+        "image": foodPhotos.bhindiBhaji.src
       },
       {
-        name: "Aloo Gobi",
-        description:
-          "A vibrant vegetarian dish featuring potatoes and cauliflower in a spiced tomato and onion sauce, adorned with fresh cilantro.",
-        descriptionNl:
-          "Een levendig vegetarisch gerecht met aardappelen en bloemkool in een gekruide tomaten- en uiensaus, versierd met verse koriander.",
-        price: 18.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "57",
+        "name": "Aloo Gobi",
+        "description": "Potato and cauliflower cooked with tomato, onion, turmeric, cumin and coriander.",
+        "descriptionNl": "Aardappel en bloemkool bereid met tomaat, ui, kurkuma, komijn en koriander.",
+        "price": 19.95,
+        "nameNl": "Aloo Gobi",
+        "allergens": [],
+        "isVegetarian": true
       },
       {
-        name: "Chana Masala",
-        description:
-          "Chickpeas in medium hot curry sauce with onion, fresh tomatoes and lemon juice.",
-        descriptionNl:
-          "Kikkererwten in medium hete currysaus met ui, verse tomaten en citroensap.",
-        price: 19.95,
-        spiceLevel: 3,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "58",
+        "name": "Chana Masala",
+        "description": "Chickpeas in a medium-spiced tomato-onion curry with ginger, garlic and lemon.",
+        "descriptionNl": "Kikkererwten in een medium pittige tomaat-ui-curry met gember, knoflook en citroen.",
+        "price": 19.95,
+        "nameNl": "Chana Masala",
+        "allergens": [],
+        "isVegetarian": true,
+        "image": foodPhotos.chanaMasala.src
       },
       {
-        name: "Soya Chunks & Mushroom",
-        description:
-          "Also known as a meal maker, and fresh mushroom curry is a delicious and favourite dish in Nepal, made with soya nuggets, spices, and loved by villagers.",
-        descriptionNl:
-          "Het staat ook bekend als maaltijdmaker, en verse champignoncurry is een heerlijk en favoriet gerecht in Nepal, gemaakt met sojanuggets en kruiden, en geliefd bij dorpelingen.",
-        price: 19.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "59",
+        "name": "Soya Chunks & Mushroom",
+        "description": "Soya pieces and fresh mushrooms cooked in a comforting Nepali-style spiced curry.",
+        "descriptionNl": "Sojastukjes en verse champignons in een verwarmende Nepalese kruidencurry.",
+        "price": 19.95,
+        "nameNl": "Soya Chunks & Mushroom",
+        "allergens": [
+          "soybeans"
+        ],
+        "isVegetarian": true
       },
       {
-        name: "Aloo, Tama & Tofu",
-        description:
-          "One of the favourite curries of Nepal made of potatoes, bamboo shoots, and Tofu is especially for vegan people, an alternative to paneer.",
-        descriptionNl:
-          "Een van de favoriete curries van Nepal gemaakt van aardappelen, bamboescheuten en tofu is speciaal voor veganisten een alternatief voor paneer.",
-        price: 19.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
-      },
-    ],
+        "id": "60",
+        "name": "Aloo, Tama & Tofu",
+        "description": "A Nepali favourite of potato, bamboo shoots and tofu in a tangy, aromatic curry.",
+        "descriptionNl": "Een Nepalese favoriet van aardappel, bamboescheuten en tofu in een frisse, aromatische curry.",
+        "price": 19.95,
+        "nameNl": "Aloo, Tama & Tofu",
+        "allergens": [
+          "soybeans"
+        ],
+        "isVegetarian": true,
+        "image": foodPhotos.alooTamaTofu.src
+      }
+    ]
   },
   {
-    name: "Essential Side Dishes",
-    items: [
+    "id": "tandoori-breads",
+    "name": "Tandoori Breads",
+    "nameNl": "Tandoori brood",
+    "items": [
       {
-        name: "Himalayan Salad",
-        description:
-          "A special salad featuring seasonal vegetables and edamame, dressed in a homemade Himalayan dressing.",
-        descriptionNl:
-          "Een bijzondere salade met seizoensgroenten en edamame, afgewerkt met een huisgemaakte Himalayadressing.",
-        price: 9.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "61",
+        "name": "Plain Naan",
+        "description": "Soft, freshly baked naan from the tandoor.",
+        "descriptionNl": "Zachte, versgebakken naan uit de tandoor.",
+        "price": 3.75,
+        "nameNl": "Plain Naan",
+        "allergens": [
+          "gluten"
+        ]
       },
       {
-        name: "Basmati Rice",
-        description: "Steamed basmati rice.",
-        price: 5.0,
-        spiceLevel: 1,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "62",
+        "name": "Butter Naan",
+        "description": "Fresh tandoori naan brushed with melted butter.",
+        "descriptionNl": "Verse naan uit de tandoor, bestreken met gesmolten boter.",
+        "price": 3.95,
+        "nameNl": "Butter Naan",
+        "allergens": [
+          "gluten",
+          "milk"
+        ]
       },
       {
-        name: "Raita",
-        description:
-          "A blend of yoghurt mixed with cucumber, tomatoes, coriander, mint leaves, and herbs.",
-        descriptionNl:
-          "Een mix van yoghurt gemengd met komkommer, tomaten, koriander, muntblaadjes en kruiden.",
-        price: 4.25,
-        spiceLevel: 1,
-        isVegetarian: true,
+        "id": "63",
+        "name": "Garlic Naan",
+        "description": "Freshly baked naan finished with fragrant garlic.",
+        "descriptionNl": "Versgebakken naan, afgewerkt met geurige knoflook.",
+        "price": 4.25,
+        "nameNl": "Garlic Naan",
+        "allergens": [
+          "gluten",
+          "milk"
+        ]
       },
       {
-        name: "Mixed Pickle",
-        description: "Traditional homemade mixed pickle.",
-        price: 4.0,
-        spiceLevel: 2,
-        isVegetarian: true,
-        isVegan: true,
+        "id": "64",
+        "name": "Cheese Naan",
+        "description": "Soft naan filled with melted cheese.",
+        "descriptionNl": "Zachte naan gevuld met gesmolten kaas.",
+        "price": 4.75,
+        "nameNl": "Cheese Naan",
+        "allergens": [
+          "gluten",
+          "milk"
+        ]
       },
-    ],
+      {
+        "id": "65",
+        "name": "Cheese & Garlic Naan",
+        "description": "Soft cheese-filled naan with aromatic garlic.",
+        "descriptionNl": "Zachte, met kaas gevulde naan en geurige knoflook.",
+        "price": 4.95,
+        "nameNl": "Cheese & Garlic Naan",
+        "allergens": [
+          "gluten",
+          "milk"
+        ]
+      },
+      {
+        "id": "66",
+        "name": "Peshwari Naan",
+        "description": "Sweet naan filled with coconut, cashew and raisins.",
+        "descriptionNl": "Zoete naan gevuld met kokos, cashew en rozijnen.",
+        "price": 4.95,
+        "nameNl": "Peshwari Naan",
+        "allergens": [
+          "gluten",
+          "milk",
+          "nuts"
+        ]
+      }
+    ]
   },
   {
-    name: "Desserts",
-    items: [
+    "id": "sides-accompaniments",
+    "name": "Sides & Accompaniments",
+    "nameNl": "Bijgerechten",
+    "items": [
       {
-        name: "Khir",
-        description:
-          "A creamy dessert that blends aromatic rice pudding with the rich flavours of milk, coconut, and nuts for an exquisite taste experience, perfect for concluding a meal on a delightful note.",
-        descriptionNl:
-          "Een romig dessert dat aromatische rijstpudding combineert met de rijke smaken van melk, kokosnoot en noten voor een voortreffelijke smaakervaring, perfect om een maaltijd op een heerlijke manier af te sluiten.",
-        price: 6.95,
-        spiceLevel: 1,
-        isVegetarian: true,
+        "id": "67",
+        "name": "Raita",
+        "description": "Cooling yoghurt with cucumber, tomato, coriander, mint and herbs.",
+        "descriptionNl": "Verkoelende yoghurt met komkommer, tomaat, koriander, munt en kruiden.",
+        "price": 4.5,
+        "nameNl": "Raita",
+        "allergens": [
+          "milk"
+        ]
       },
       {
-        name: "Kulfi",
-        description:
-          "This delightful treat is crafted by slow-cooking coconut milk until thickened, then infused with cardamom, saffron, and pistachios, offering a refreshingly dense and creamy Kulfi that serves as a perfect alternative to traditional ice cream, ideal for concluding any meal.",
-        descriptionNl:
-          "Deze heerlijke traktatie wordt gemaakt door kokosmelk langzaam te koken tot het dikker wordt en vervolgens doordrenkt met kardemom, saffraan en pistachenoten, waardoor een verfrissend dichte en romige Kulfi ontstaat die dient als een perfect alternatief voor traditioneel ijs, ideaal als afsluiting van elke maaltijd.",
-        price: 7.25,
-        spiceLevel: 1,
-        isVegetarian: true,
-        image: "/images/food/kulfi.jpg",
+        "id": "68",
+        "name": "Mixed Pickle",
+        "description": "Traditional mixed achar with a tangy, spiced finish.",
+        "descriptionNl": "Traditionele gemengde achar met een pittig-frisse smaak.",
+        "price": 4.0,
+        "nameNl": "Mixed Pickle",
+        "allergens": [
+          "mustard"
+        ]
       },
       {
-        name: "Gulab Jamun",
-        description:
-          "A classic Indian and Nepalese dessert, consists of soft, fried dough balls drenched in a fragrant sugar syrup, offering an indulgent and aromatic finish to any meal.",
-        descriptionNl:
-          "Een klassiek Indiaas en Nepalees dessert, bestaande uit zachte, gefrituurde deegballetjes gedrenkt in een geurige suikersiroop, die een heerlijke en aromatische afdronk biedt aan elke maaltijd.",
-        price: 6.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-      },
-      {
-        name: "Mango Ice Cream",
-        description: "Mango flavoured ice cream.",
-        price: 8.5,
-        spiceLevel: 1,
-        isVegetarian: true,
-      },
-      {
-        name: "Dame Blanche",
-        description:
-          "A classic dessert experience with smooth vanilla ice cream, drizzled with warm chocolate sauce, and garnished with whipped cream and flaked almonds for an elegant finish.",
-        descriptionNl:
-          "Het biedt een klassieke dessertervaring met zacht vanille-ijs, besprenkeld met warme chocoladesaus en gegarneerd met slagroom en geschaafde amandelen voor een elegante afdronk.",
-        price: 9.95,
-        spiceLevel: 1,
-        isVegetarian: true,
-      },
-    ],
+        "id": "69",
+        "name": "Nepali Green Salad",
+        "nameNl": "Nepali Green Salad",
+        "price": 5.5,
+        "description": "A crisp, vibrant platter of fresh cucumbers, carrots, and white radish served with sliced onions, spicy green chilies, and fresh lime.",
+        "descriptionNl": "Een knapperig, levendig bord met verse komkommer, wortel en witte rammenas, geserveerd met uienringen, pittige groene pepers en verse limoen.",
+        "allergens": [],
+        "isVegetarian": true
+      }
+    ]
   },
+  {
+    "id": "desserts",
+    "name": "Desserts",
+    "nameNl": "Nagerechten",
+    "items": [
+      {
+        "id": "70",
+        "name": "Kheer",
+        "description": "Creamy rice pudding with milk, cardamom, coconut and nuts.",
+        "descriptionNl": "Romige rijstepap met melk, kardemom, kokos en noten.",
+        "price": 7.75,
+        "nameNl": "Kheer",
+        "allergens": [
+          "milk",
+          "nuts"
+        ]
+      },
+      {
+        "id": "71",
+        "name": "Kulfi",
+        "description": "A dense, creamy Indian frozen dessert scented with cardamom and saffron, finished with pistachio.",
+        "descriptionNl": "Vol en romig Indiaas ijsdessert met kardemom en saffraan, afgewerkt met pistache.",
+        "price": 7.75,
+        "nameNl": "Kulfi",
+        "allergens": [
+          "milk",
+          "nuts"
+        ]
+      },
+      {
+        "id": "72",
+        "name": "Gulab Jamun",
+        "description": "Soft milk-solid dumplings soaked in fragrant cardamom sugar syrup.",
+        "descriptionNl": "Zachte melkdeegballetjes in geurige kardemom-suikersiroop.",
+        "price": 6.95,
+        "nameNl": "Gulab Jamun",
+        "allergens": [
+          "gluten",
+          "milk"
+        ]
+      },
+      {
+        "id": "73",
+        "name": "Mango Ice Cream",
+        "description": "Smooth, creamy ice cream bursting with ripe mango flavour.",
+        "descriptionNl": "Romig, zacht ijs met de volle smaak van rijpe mango.",
+        "price": 8.95,
+        "nameNl": "Mango Ice Cream",
+        "allergens": [
+          "milk"
+        ]
+      },
+      {
+        "id": "74",
+        "name": "Vanilla Ice Cream",
+        "description": "Classic creamy vanilla ice cream, simple and satisfying.",
+        "descriptionNl": "Klassiek romig vanille-ijs, eenvoudig en heerlijk.",
+        "price": 7.95,
+        "nameNl": "Vanilla Ice Cream",
+        "allergens": [
+          "milk"
+        ]
+      },
+      {
+        "id": "75",
+        "name": "Dame Blanche",
+        "description": "A classic dessert of smooth vanilla ice cream, drizzled with warm chocolate sauce and finished with whipped cream and flaked almonds.",
+        "descriptionNl": "Een klassiek dessert van zacht vanille-ijs, besprenkeld met warme chocoladesaus en afgewerkt met slagroom en geschaafde amandelen.",
+        "price": 9.95,
+        "nameNl": "Dame Blanche",
+        "allergens": [
+          "milk",
+          "nuts"
+        ]
+      }
+    ]
+  }
 ];

@@ -1,151 +1,122 @@
+import { MENU_PATHS } from "@/lib/menu-routes";
 import Link from "next/link";
+import OpeningHours from "@/components/shared/OpeningHours";
 import Image from "next/image";
-import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
 import { restaurant } from "@/content/restaurant";
-import { footerQuickLinks, footerMenuLinks } from "@/content/navigation";
+import { footerQuickLinks } from "@/content/navigation";
+import { menuCategories } from "@/content/menu";
 import { EXTERNAL_LINKS } from "@/lib/constants";
+import { createTranslator, localizedPath, type LocaleProps } from "@/lib/i18n";
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
+export default function Footer({ locale = "en" }: LocaleProps) {
+  const t = createTranslator(locale);
+  const footerCategories = menuCategories.filter((category) =>
+    [
+      "momo-noodles",
+      "curry-classics",
+      "tandoori",
+      "vegetarian-vegan-mains",
+    ].includes(category.id || ""),
+  );
   return (
-    <footer className="bg-dark-cyan-green">
-      {/* Main Footer */}
-      <div className="section-container py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          {/* Brand Column */}
-          <div>
-            <Link href="/" className="inline-block mb-6">
-              <Image
-                src="/images/logo.png"
-                alt="The Himalayan Kitchen"
-                width={180}
-                height={60}
-                className="h-[50px] w-auto"
-              />
-            </Link>
-            <p className="font-manrope text-[15px] leading-[28px] text-white/70 mb-6">
-              {restaurant.shortDescription}
-            </p>
-            <div className="flex flex-col gap-3">
-              <a
-                href={`tel:${restaurant.phone}`}
-                className="flex items-center gap-3 font-jost text-[15px] text-white/70 hover:text-primary transition-colors"
-              >
-                <FiPhone className="text-primary flex-shrink-0" />
-                {restaurant.phone}
-              </a>
-              <a
-                href={`mailto:${restaurant.email}`}
-                className="flex items-center gap-3 font-jost text-[15px] text-white/70 hover:text-primary transition-colors"
-              >
-                <FiMail className="text-primary flex-shrink-0" />
-                {restaurant.email}
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-jakarta font-semibold text-[20px] text-white mb-6">
-              Quick Links
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {footerQuickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="font-jost text-[15px] text-white/70 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <a
-                  href={EXTERNAL_LINKS.findATable}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-jost text-[15px] text-white/70 hover:text-primary transition-colors"
-                >
-                  Order Online
-                </a>
+    <footer className="site-footer">
+      <div className="section-container footer-grid">
+        <div className="footer-brand">
+          <Link href={localizedPath("/", locale)}>
+            <Image
+              src="/images/logo.png"
+              alt="The Himalayan Kitchen"
+              width={180}
+              height={70}
+              sizes="180px"
+              className="brand-logo"
+            />
+          </Link>
+          <p>{t(restaurant.shortDescription)}</p>
+          <a href={`tel:${restaurant.phone.replace(/\s/g, "")}`}>
+            {restaurant.phone}
+          </a>
+          <a href={`mailto:${restaurant.email}`}>{restaurant.email}</a>
+          <a
+            href={EXTERNAL_LINKS.googleMapsLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {restaurant.address.street}
+            <br />
+            {restaurant.address.postalCode} {restaurant.address.city}
+          </a>
+        </div>
+        <div>
+          <h2>{t("Quick Links")}</h2>
+          <ul>
+            {footerQuickLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={localizedPath(link.href, locale)}>
+                  {t(link.label)}
+                </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Our Menu */}
-          <div>
-            <h4 className="font-jakarta font-semibold text-[20px] text-white mb-6">
-              Our Menu
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {footerMenuLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="font-jost text-[15px] text-white/70 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Opening Hours */}
-          <div>
-            <h4 className="font-jakarta font-semibold text-[20px] text-white mb-6">
-              Opening Hours
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {restaurant.openingHours.map((slot) => (
-                <li
-                  key={slot.day}
-                  className="flex justify-between font-jost text-[15px]"
+            ))}
+            <li>
+              <a
+                href={EXTERNAL_LINKS.orderPickup}
+                data-action="order"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("Order Online")}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>{t("Our Menu")}</h2>
+          <ul>
+            {footerCategories.map((category) => (
+              <li key={category.id}>
+                <Link
+                  href={`${localizedPath(MENU_PATHS.food, locale)}#${category.id}`}
                 >
-                  <span className={slot.isClosed ? "text-white/40" : "text-white/70"}>
-                    {slot.day}
-                  </span>
-                  <span
-                    className={
-                      slot.isClosed ? "text-primary/60" : "text-primary"
-                    }
-                  >
-                    {slot.hours}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6 flex items-start gap-3">
-              <FiMapPin className="text-primary flex-shrink-0 mt-1" />
-              <p className="font-jost text-[14px] text-white/70">
-                {restaurant.address.street}
-                <br />
-                {restaurant.address.postalCode} {restaurant.address.city}
-              </p>
-            </div>
-          </div>
+                  {locale === "nl" ? category.nameNl : category.name}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href={localizedPath(MENU_PATHS.drinks, locale)}>
+                {t("Drinks & Bar")}
+              </Link>
+            </li>
+            <li>
+              <a
+                href={EXTERNAL_LINKS.googleReviews}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("See all reviews on Google")}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>{t("Opening Hours")}</h2>
+          <OpeningHours locale={locale} />
         </div>
       </div>
-
-      {/* Footer Bottom */}
-      <div className="border-t border-white/10">
-        <div className="section-container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-jost text-[14px] text-white/50">
-            &copy; {currentYear} {restaurant.name}. All rights reserved.
-          </p>
-          <div className="flex items-center gap-4">
-            <a
-              href={EXTERNAL_LINKS.findATable}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-jost text-[14px] text-white/50 hover:text-primary transition-colors"
-            >
-              Powered by FindATable
-            </a>
-          </div>
-        </div>
+      <div className="footer-bottom section-container">
+        <p>
+          © {new Date().getFullYear()} {restaurant.name}.{" "}
+          {t("All rights reserved.")}
+        </p>
+        <p className="footer-credit">
+          Powered by{" "}
+          <a
+            href="http://newsoftsolution.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            New Soft Solution
+          </a>
+        </p>
       </div>
     </footer>
   );

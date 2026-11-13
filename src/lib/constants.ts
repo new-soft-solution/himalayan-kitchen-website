@@ -4,6 +4,7 @@
 
 export const EXTERNAL_LINKS = {
   findATable: "https://findatable.nl/restaurant/the-himalayan-kitchen",
+  orderPickup: "https://findatable.nl/restaurant/the-himalayan-kitchen/order/pickup",
   whatsapp: "https://wa.me/31202623880",
   googleMaps: "https://www.google.com/maps?q=The+Himalayan+Kitchen,+Ten+Katestraat+45H,+1053+BX+Amsterdam&output=embed",
   googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Ten+Katestraat+45H+1053+BX+Amsterdam",

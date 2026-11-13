@@ -38,6 +38,7 @@ export interface Restaurant {
 
 export interface ExternalLinks {
   findATable: string;
+  orderPickup: string;
   whatsapp: string;
   googleMaps: string;
   googleReviews: string;
@@ -48,27 +49,42 @@ export interface NavLink {
   href: string;
 }
 
+export interface NavGroup {
+  label: string;
+  basePath?: string;
+  children: NavLink[];
+}
+
+export type NavItem = NavLink | NavGroup;
+
 export interface HeroSlide {
+  kind: "video" | "image";
   subtitle: string;
   title: string;
   description: string;
-  buttonText: string;
-  buttonLink: string;
   image: string;
+  imageAlt: string;
+  featuredDish?: string;
+  promotion?: string;
+  locationHighlight?: string;
 }
 
 export interface MenuItemVariant {
   label: string;
+  labelNl?: string;
   price: number;
 }
 
 export interface MenuItem {
+  id?: string;
   name: string;
+  nameNl?: string;
   description: string;
   descriptionNl?: string;
   price: number;
   variants?: MenuItemVariant[];
-  spiceLevel: 1 | 2 | 3 | 4 | 5;
+  spiceLevel?: 1 | 2 | 3 | 4 | 5;
+  allergens?: string[];
   isVegan?: boolean;
   isVegetarian?: boolean;
   isPopular?: boolean;
@@ -76,7 +92,9 @@ export interface MenuItem {
 }
 
 export interface MenuCategory {
+  id?: string;
   name: string;
+  nameNl?: string;
   description?: string;
   descriptionNl?: string;
   note?: string;
@@ -85,15 +103,22 @@ export interface MenuCategory {
 }
 
 export interface DrinkItem {
+  id?: string;
   name: string;
+  nameNl?: string;
   description?: string;
+  descriptionNl?: string;
   price: number;
+  variants?: MenuItemVariant[];
+  serving?: string;
   image?: string;
   origin?: string;
 }
 
 export interface DrinkCategory {
+  id?: string;
   name: string;
+  nameNl?: string;
   items: DrinkItem[];
 }
 

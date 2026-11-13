@@ -1,15 +1,10 @@
 import type { MetadataRoute } from "next";
+import { locales, localizedPath, pagePaths } from "@/lib/i18n";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://himalayankitchen.nl";
-
-  return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/menu`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/chef`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/gallery`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-  ];
+  return locales.flatMap((locale) => pagePaths.map((path) => ({
+    url: SITE_CONFIG.url + localizedPath(path || "/", locale),
+    alternates: { languages: { en: SITE_CONFIG.url + localizedPath(path || "/", "en"), nl: SITE_CONFIG.url + localizedPath(path || "/", "nl") } },
+  })));
 }

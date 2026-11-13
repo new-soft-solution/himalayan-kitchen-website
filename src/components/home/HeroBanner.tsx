@@ -1,101 +1,88 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, EffectFade } from "swiper/modules";
+import { A11y, Keyboard, EffectFade, Autoplay } from "swiper/modules";
+import type { Swiper as SwiperInstance } from "swiper";
 import Image from "next/image";
 import Link from "next/link";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import { heroSlides } from "@/content/hero";
-import { EXTERNAL_LINKS } from "@/lib/constants";
+import { heroContent, heroSlides } from "@/content/hero";
+import { localizedPath } from "@/lib/i18n";
+import { useMotionPreference } from "@/lib/use-motion-preference";
+import { useLocale, useTranslation } from "@/components/layout/LocaleProvider";
+import FindATableCTA from "@/components/layout/FindATableCTA";
 
 export default function HeroBanner() {
+  const locale = useLocale();
+  const t = useTranslation();
+  const [swiper, setSwiper] = useState<SwiperInstance>();
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const video = useRef<HTMLVideoElement>(null);
+  const allowMotion = useMotionPreference();
+  const currentSlide = heroSlides[activeSlide];
+  const playing = allowMotion && !paused && currentSlide.kind === "video";
+
+  useEffect(() => {
+    const element = video.current;
+    if (!element) return;
+    if (playing) void element.play().catch(() => setPaused(true));
+    else element.pause();
+  }, [playing]);
+
+  useEffect(() => {
+    if (!swiper || swiper.destroyed) return;
+    if (allowMotion && !paused) swiper.autoplay.start();
+    else swiper.autoplay.stop();
+    return () => { if (!swiper.destroyed) swiper.autoplay.stop(); };
+  }, [swiper, allowMotion, paused]);
+
   return (
-    <section className="hero-slider relative">
-      <Swiper
-        modules={[Autoplay, Navigation, EffectFade]}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        navigation
-        effect="fade"
-        loop
-        className="w-full h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px]"
-      >
-        {heroSlides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full h-full">
-              {/* Background Image */}
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-deep-teal/90 via-deep-teal/70 to-transparent" />
-
-              {/* Content */}
-              <div className="relative z-10 h-full flex items-center">
-                <div className="section-container">
-                  <div className="max-w-[650px]">
-                    <h3 className="banner-subtitle font-satisfy font-normal text-[16px] md:text-[20px] lg:text-[24px] text-primary mb-3">
-                      {slide.subtitle}
-                    </h3>
-                    <h1 className="banner-title font-jakarta font-bold text-[28px] md:text-[42px] lg:text-[55px] xl:text-[65px] leading-[1.15] text-white mb-4 md:mb-6">
-                      {slide.title}
-                    </h1>
-                    <p className="banner-desc font-manrope text-[14px] md:text-[16px] lg:text-[18px] leading-[28px] text-white/80 mb-6 md:mb-8 max-w-[500px]">
-                      {slide.description}
-                    </p>
-                    <div className="banner-btn flex flex-wrap gap-4">
-                      {slide.buttonLink.startsWith("http") ? (
-                        <a
-                          href={slide.buttonLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn inline-flex items-center justify-center gap-2 bg-primary px-7 md:px-[46px] rounded-md font-jost font-semibold text-[14px] md:text-[18px] leading-[50px] md:leading-[58px] text-white hover:bg-primary-dark transition-colors"
-                        >
-                          <span className="btn__inner">{slide.buttonText}</span>
-                        </a>
-                      ) : (
-                        <Link
-                          href={slide.buttonLink}
-                          className="btn inline-flex items-center justify-center gap-2 bg-primary px-7 md:px-[46px] rounded-md font-jost font-semibold text-[14px] md:text-[18px] leading-[50px] md:leading-[58px] text-white hover:bg-primary-dark transition-colors"
-                        >
-                          <span className="btn__inner">{slide.buttonText}</span>
-                        </Link>
-                      )}
-                      <Link
-                        href="/menu"
-                        className="btn inline-flex items-center justify-center gap-2 border-2 border-white/30 px-7 md:px-[46px] rounded-md font-jost font-semibold text-[14px] md:text-[18px] leading-[46px] md:leading-[54px] text-white hover:border-primary hover:text-primary transition-colors"
-                      >
-                        <span className="btn__inner">View Menu</span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      {/* Decorative mountain silhouette at bottom */}
-      <div className="absolute bottom-0 left-0 w-full z-20 pointer-events-none">
-        <svg
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 80V60L120 45L240 55L360 35L480 50L600 25L720 40L840 20L960 38L1080 15L1200 30L1320 10L1440 25V80H0Z"
-            fill="#102B2A"
-          />
-        </svg>
+    <section className="hero-slider template-hero" aria-label={t("Restaurant highlights")} aria-roledescription={t("Carousel")} data-motion={allowMotion}>
+      <div className="hero-background" aria-hidden="true">
+        <Swiper modules={[A11y, Keyboard, EffectFade, Autoplay]} autoplay={{ delay: 7800, disableOnInteraction: false, pauseOnMouseEnter: true }} speed={1100} lazyPreloadPrevNext={1} keyboard={{ onlyInViewport: true }} effect="fade" fadeEffect={{ crossFade: true }} onSwiper={setSwiper} onSlideChange={(instance) => setActiveSlide(instance.realIndex)} a11y={{ enabled: false }} loop>
+          {heroSlides.map((slide, index) => <SwiperSlide key={slide.image} data-swiper-autoplay={slide.kind === "image" ? 12000 : 7800}>
+            <Image src={slide.image} alt="" fill unoptimized={slide.kind === "image"} sizes="100vw" className="hero-photo" loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} />
+            {slide.kind === "video" && allowMotion && <video ref={video} className="hero-video" autoPlay={playing} muted loop playsInline preload="none" tabIndex={-1} poster={slide.image}>
+              <source src="/images/hero/optimized/restaurant-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
+              <source src="/images/hero/optimized/restaurant-desktop.mp4" type="video/mp4" />
+            </video>}
+          </SwiperSlide>)}
+        </Swiper>
       </div>
+      <div className="hero-shade" />
+      <div className="section-container hero-content">
+        <p className="hero-subtitle">{t(heroContent.eyebrow)}</p>
+        <div className="hero-copy-stack">{heroSlides.map((slide, index) => {
+          const active = index === activeSlide;
+          const Heading = active ? "h1" : "p";
+          return <div key={slide.image} className="hero-slide-copy" data-kind={slide.kind} aria-hidden={!active} inert={!active}>
+            <Heading className="hero-title">{t(slide.title)}</Heading>
+            <div className="hero-slide-intro">
+              {slide.featuredDish && <p className="hero-featured-dish">{t(slide.featuredDish)}</p>}
+              {slide.subtitle && <p className="hero-slogan">{t(slide.subtitle)}</p>}
+            </div>
+            <p className="hero-description">{t(slide.description)}</p>
+            <div className="hero-slide-highlights">
+              {slide.promotion && <p className="hero-promotion">{t(slide.promotion)}</p>}
+              {slide.locationHighlight && <p className="hero-dish-location">{t(slide.locationHighlight)}</p>}
+            </div>
+          </div>;
+        })}</div>
+        <div className="button-row"><FindATableCTA /><Link href={localizedPath("/menu", locale)} className="button button-outline">{t("View Menu")} <span aria-hidden="true">↗</span></Link></div>
+        <p className="hero-location">{t("Since 2014")} <span aria-hidden="true">·</span> Ten Katestraat 45H <span aria-hidden="true">·</span> {t("Dine in & takeaway")}</p>
+        <div className="hero-controls">
+          <div className="hero-navigation"><button type="button" aria-label={t("Previous slide")} onClick={() => swiper?.slidePrev()} disabled={!swiper}>←</button><button type="button" aria-label={t("Next slide")} onClick={() => swiper?.slideNext()} disabled={!swiper}>→</button><span className="hero-counter" aria-hidden="true"><strong>{String(activeSlide + 1).padStart(2, "0")}</strong> / {String(heroSlides.length).padStart(2, "0")}</span></div>
+          <div className="hero-pagination" role="group" aria-label={t("Choose a slide")}>
+            {heroSlides.map((slide, index) => <button key={slide.image} type="button" aria-label={`${t("Show slide")}: ${t(slide.title)}`} aria-pressed={activeSlide === index} onClick={() => swiper?.slideToLoop(index)} disabled={!swiper}><span /></button>)}
+          </div>
+          {allowMotion && <button type="button" className="video-toggle slideshow-toggle" aria-label={t(paused ? "Play slideshow" : "Pause slideshow")} aria-pressed={paused} onClick={() => setPaused(!paused)}><span aria-hidden="true">{paused ? "▶" : "Ⅱ"}</span></button>}
+        </div>
+        <p className="sr-only" role="status" aria-live={allowMotion && !paused ? "off" : "polite"}>{t(currentSlide.title)} {t(currentSlide.description)}</p>
+      </div>
+      <svg className="hero-mountains" viewBox="0 0 1440 80" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 80V60L120 45L240 55L360 35L480 50L600 25L720 40L840 20L960 38L1080 15L1200 30L1320 10L1440 25V80H0Z" fill="currentColor" /></svg>
     </section>
   );
 }

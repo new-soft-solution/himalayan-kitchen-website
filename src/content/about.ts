@@ -9,7 +9,7 @@ export const aboutContent = {
     paragraphs: [
       "In 2014, Surya Raj Giri opened the doors of The Himalayan Kitchen on Ten Katestraat in Amsterdam's vibrant Kinkerbuurt neighborhood. Having lived in Amsterdam for over 25 years, Surya had long dreamed of creating a place where the authentic tastes of Nepal could find a home in the heart of the Netherlands.",
       "Every dish on our menu tells a story — of recipes passed down through generations in Nepali kitchens, of spices carefully sourced and blended by hand, of a tradition that stretches from the foothills of the Himalayas to the canals of Amsterdam.",
-      "Today, The Himalayan Kitchen is a beloved local gem where families celebrate, friends gather, and travelers discover the warm hospitality and bold flavors of Nepalese and Indian cuisine. Our intimate 31-seat dining room, adorned with Nepali art and Himalayan photography, creates an atmosphere that transports you thousands of miles with every bite.",
+      "Today, The Himalayan Kitchen is a beloved local gem where families celebrate, friends gather, and travelers discover the warm hospitality and bold flavors of Nepalese and Indian cuisine. Our intimate 32-seat dining room, adorned with Nepali art and Himalayan photography, creates an atmosphere that transports you thousands of miles with every bite.",
     ],
   },
   values: [

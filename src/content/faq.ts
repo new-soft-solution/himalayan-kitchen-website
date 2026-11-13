@@ -2,24 +2,32 @@ import type { FAQItem } from "@/types";
 
 export const faqItems: FAQItem[] = [
   {
+    question: "Can we dine before a film at Filmhallen?",
+    answer: "Yes. We’re a short walk from Filmhallen. Tell our team your showtime when you arrive so we can help you enjoy a delicious, promptly served meal before the film. Prefer to take your time? Join us for a relaxed dinner afterwards.",
+  },
+  {
+    question: "Are you near Foodhallen and De Hallen?",
+    answer: "Yes. The Himalayan Kitchen is at Ten Katestraat 45H in Amsterdam Oud-West, a short walk from Foodhallen, De Hallen and Filmhallen. Join us for Nepalese and Indian food before or after your visit. See our contact page for directions and opening hours.",
+  },
+  {
     question: "Do I need to make a reservation?",
     answer:
-      "While walk-ins are welcome, we strongly recommend making a reservation, especially for Friday and Saturday evenings. Our intimate dining room seats 31 guests, so booking ahead ensures your table is ready. You can reserve easily through our partner platform FindATable.",
+      "While walk-ins are welcome, we strongly recommend making a reservation, especially for Friday and Saturday evenings. Our intimate dining room seats 32 guests, so booking ahead ensures your table is ready. You can reserve using the Find A Table reservation widget on this page.",
   },
   {
     question: "What are your opening hours?",
     answer:
-      "We are open Tuesday to Friday from 16:30 to 22:00, Saturday from 16:00 to 22:00, and Sunday from 16:00 to 22:00. We are closed on Mondays.",
+      "You’ll find our current opening hours in the header and footer. We welcome you for dinner Tuesday to Sunday and are closed on Mondays.",
   },
   {
     question: "Do you offer vegetarian or vegan options?",
     answer:
-      "Absolutely! We have a dedicated vegetarian section on our menu featuring dishes like Paneer Tikka Masala, Dal Tarka, Aloo Gobi, and Palak Paneer. Several of our dishes are also vegan-friendly. Our Vegetable Samosa and Dal Tarka are popular vegan choices. Please let your server know about any dietary requirements.",
+      "Yes. Our menu includes vegetarian dishes such as Paneer Jalfrezi, Daal Makhani, Aloo Gobi and Saag Paneer, alongside Vegan Steamed Momo, Vegan Kothey Momo and Vegan Chilli Momo. Please tell our team about any dietary requirements or allergies before ordering.",
   },
   {
     question: "How spicy is the food?",
     answer:
-      "Our menu features dishes across all spice levels — from the mild and creamy Chicken Korma (spice level 1) to the fiery Chicken Vindaloo (spice level 5). Each dish on our menu includes a spice meter so you know what to expect. We can also adjust spice levels to your preference — just let us know when ordering.",
+      "Our dishes range from mild, creamy Korma to fiery Vindaloo. Spice levels can be adjusted for many dishes. Please tell our team your preference when ordering.",
   },
   {
     question: "Do you offer takeaway and delivery?",
@@ -34,7 +42,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Do you serve alcohol?",
     answer:
-      "Yes, we have a full bar with a curated selection of beers (including Nepali beer and Kingfisher), wines, spirits, and our signature Khukuri Rum from Nepal. We also offer non-alcoholic options like Masala Chai and Mango Lassi.",
+      "Yes. Our drinks menu includes Nepalese and Indian beers, wines, spirits and Khukuri Rum from Nepal, alongside alcohol-free choices such as Himalayan mocktails, soft drinks and Masala Tea (Nepali Chiya).",
   },
   {
     question: "Where are you located and is there parking nearby?",
@@ -44,7 +52,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Can I host a private event or group dinner?",
     answer:
-      "We welcome group bookings and can arrange special menus for private events and celebrations. With our intimate 31-seat setting, we can accommodate small to medium-sized groups. Please contact us directly at info@himalayankitchen.nl to discuss your event.",
+      "We welcome group bookings and can arrange special menus for private events and celebrations. With our intimate 32-seat setting, we can accommodate small to medium-sized groups. Please contact us directly at info@himalayankitchen.nl to discuss your event.",
   },
   {
     question: "What payment methods do you accept?",

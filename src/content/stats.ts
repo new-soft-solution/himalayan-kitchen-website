@@ -1,3 +1,4 @@
+import { restaurant } from "./restaurant";
 import type { Stat } from "@/types";
 
 export const stats: Stat[] = [
@@ -17,7 +18,7 @@ export const stats: Stat[] = [
     suffix: "+",
   },
   {
-    value: "4.5",
+    value: String(restaurant.rating),
     label: "Star Rating",
     suffix: "",
   },

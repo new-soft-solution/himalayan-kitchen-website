@@ -1,35 +1,66 @@
 import Link from "next/link";
+import { createTranslator, localizedPath, type LocaleProps } from "@/lib/i18n";
+import { getBreadcrumbSchema } from "@/lib/schema";
+import StructuredData from "./StructuredData";
+import type { NavLink } from "@/types";
 
-interface SubPageBannerProps {
+interface SubPageBannerProps extends LocaleProps {
   title: string;
   breadcrumb?: string;
+  path?: string;
+  parents?: NavLink[];
 }
 
-export default function SubPageBanner({ title, breadcrumb }: SubPageBannerProps) {
+export default function SubPageBanner({
+  title,
+  breadcrumb,
+  path,
+  parents = [],
+  locale = "en",
+}: SubPageBannerProps) {
+  const t = createTranslator(locale);
   return (
-    <section className="relative bg-dark-cyan-green py-[60px] md:py-[80px] lg:py-[100px] overflow-hidden">
-      {/* Decorative mountain silhouette */}
-      <div className="absolute bottom-0 left-0 w-full pointer-events-none opacity-5">
-        <svg viewBox="0 0 1440 120" fill="none" className="w-full" preserveAspectRatio="none">
-          <path d="M0 120V80L180 50L360 70L540 20L720 55L900 10L1080 45L1260 5L1440 30V120H0Z" fill="white" />
-        </svg>
+    <section className="subpage-banner">
+      <svg
+        className="subpage-mountains"
+        viewBox="0 0 1440 120"
+        fill="none"
+        aria-hidden="true"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 120V80L180 50L360 70L540 20L720 55L900 10L1080 45L1260 5L1440 30V120H0Z"
+          fill="currentColor"
+        />
+      </svg>
+      <div className="subpage-mandala" aria-hidden="true" />
+      <div className="section-container">
+        <p className="eyebrow">The Himalayan Kitchen · Amsterdam</p>
+        <h1>{t(title)}</h1>
+        <nav aria-label={locale === "nl" ? "Broodkruimelpad" : "Breadcrumb"}>
+          <Link href={localizedPath("/", locale)}>{t("Home")}</Link>
+          {parents.map((parent) => (
+            <span key={parent.href} className="contents">
+              <span aria-hidden="true">/</span>
+              <Link href={localizedPath(parent.href, locale)}>
+                {t(parent.label)}
+              </Link>
+            </span>
+          ))}
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{t(breadcrumb || title)}</span>
+        </nav>
       </div>
-
-      {/* Mandala accent */}
-      <div className="absolute top-1/2 right-[-100px] -translate-y-1/2 w-[250px] h-[250px] rounded-full border border-primary/5 pointer-events-none" />
-
-      <div className="section-container relative z-10 text-center">
-        <h1 className="font-jakarta font-bold text-[32px] md:text-[42px] lg:text-[55px] text-white mb-4">
-          {title}
-        </h1>
-        <div className="flex items-center justify-center gap-2 font-jost text-[15px]">
-          <Link href="/" className="text-white/60 hover:text-primary transition-colors">
-            Home
-          </Link>
-          <span className="text-primary">/</span>
-          <span className="text-primary">{breadcrumb || title}</span>
-        </div>
-      </div>
+      {path && (
+        <StructuredData
+          data={getBreadcrumbSchema(
+            t(breadcrumb || title),
+            path,
+            locale,
+            parents,
+          )}
+        />
+      )}
     </section>
   );
 }
